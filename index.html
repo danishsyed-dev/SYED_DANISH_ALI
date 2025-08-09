@@ -137,14 +137,18 @@
     /* Navigation */
     nav {
       display: flex;
+      visibility: relative;
       justify-content: center;
       background: rgba(22, 22, 24, 0.8);
       backdrop-filter: blur(10px);
       padding: 15px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      position: sticky;
+      position: sticky;  
       top: 0;
       z-index: 100;
+    }
+    .nav-hidden {
+      top: -80px; /* Adjust if your nav is taller/shorter */
     }
 
     nav a {
@@ -432,10 +436,10 @@
       
       nav {
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 1px;
         padding: 20px;
       }
-      
+
       .container {
         padding: 20px 15px;
       }
@@ -488,15 +492,15 @@
       </li>
     </ul>
   </header>
-
-  <nav>
+  
+    <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#resume">Resume</a>
     <a href="#contact">Contact</a>
-  </nav>
+    </nav>
 
   <div class="container">
     <section id="about" class="fade-in">
@@ -530,6 +534,7 @@
         <span>NLP</span>
         <span>Embedded Systems</span>
         <span>Arduino</span>
+        <span>IOT</span>
         <span>scikit-learn</span>
         <span>Pandas</span>
         <span>TensorFlow</span>
@@ -538,7 +543,11 @@
         <span>Firebase</span>
         <span>MATLAB</span>
         <span>HTML/CSS/JS/PHP</span>
-        <span>Academic Writing</span>
+        <span>APIs Integration</span>
+        <span>PowerBi</span>
+        <span>Tableau</span>
+        <span>Data Analysis</span>
+        <span>Git & GitHub</span>
       </div>
     </section>
 
@@ -570,8 +579,11 @@
         <p>
           An IoT-enabled Arduino system that controls street lights using IR and LDR sensors and real-time logic.<br>
           <strong>Technologies Used:</strong> Arduino, IR Sensors, LDR Sensors<br>
-          <strong>Contribution:</strong> Circuit design, coding, and testing.
+          <strong>Contribution:</strong> Circuit design, coding, and testing.<br>
         </p>
+        <a class="button" href="(FINAL)SMART HIGHWAY LIGHT WITH MOVEMENT DETECTOR USING ARDUINO.pdf" target="_blank">
+          <span>View Project Details</span>
+        </a>
       </div>
 
       <div class="project">
@@ -596,6 +608,19 @@
           <span>View Project Details</span>
         </a>
       </div>
+
+      <div class="project">
+        <h3>Life RPG — Turn Your Life Into a Game</h3>
+        <p>
+          A browser-based Life RPG that gamifies daily habits with quests, XP, levels, streaks, and achievements. Users complete real-life tasks to earn rewards and progress their character stats. <br><br>
+          <strong>Technologies Used:</strong> HTML, CSS, JavaScript (Vanilla), LocalStorage, GitHub Pages/Actions<br>
+          <strong>Contribution:</strong> Game design (XP, leveling, quests, achievements), UI/UX, front-end implementation, and CI/CD to GitHub Pages.
+        </p>
+        <a class="button" href="https://github.com/danishsyed-dev/Life-RPG" target="_blank"> <span>View Repository</span> </a>
+        <a class="button" href="http://syeddanishali.me/Life-RPG/" target="_blank"> <span>Play Live</span>
+        </a>
+      </div>
+
     </section>
 
     <section id="resume" class="fade-in">
@@ -676,6 +701,20 @@
           });
         }
       });
+    });
+    // Hide nav on scroll down, show on scroll up
+    let lastScrollTop = 0;
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        nav.classList.add('nav-hidden');
+      } else {
+        // Scrolling up
+        nav.classList.remove('nav-hidden');
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll
     });
   </script>
 </body>
