@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "sk26idpbki");
-</script>
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Syed Danish Ali | Portfolio</title>
+  <meta name="description"
+    content="Syed Danish Ali - Software Developer, Data Analyst & ML Engineer. Building AI/ML solutions, data pipelines, and embedded systems." />
+  <title>Syed Danish Ali | Software Developer & ML Engineer</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts - JetBrains Mono for that developer aesthetic -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
-      --primary: #0a0a0a;
-      --secondary: #1a1a1a;
-      --accent: #00d4ff;
-      --accent-secondary: #7c3aed;
-      --light: #ffffff;
-      --text-secondary: #a1a1aa;
-      --surface: #161618;
-      --surface-hover: #27272a;
-      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --glow: 0 0 20px rgba(0, 212, 255, 0.3);
+      --bg-primary: #0d1117;
+      --bg-secondary: #161b22;
+      --bg-tertiary: #21262d;
+      --border-color: #30363d;
+      --border-accent: #238636;
+      --text-primary: #e6edf3;
+      --text-secondary: #8b949e;
+      --text-muted: #6e7681;
+      --accent-green: #3fb950;
+      --accent-cyan: #58a6ff;
+      --accent-purple: #a371f7;
+      --accent-orange: #f0883e;
+      --link-color: #58a6ff;
+      --mono-font: 'JetBrains Mono', 'Fira Code', monospace;
+      --sans-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     * {
@@ -45,665 +54,900 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--primary);
-      color: var(--light);
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family: var(--sans-font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 15px;
     }
 
-    /* Animated Background */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
-      z-index: -1;
-      animation: float 20s ease-in-out infinite;
+    /* Main Container */
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
+    /* Header - Minimal Hero */
+    .header {
+      margin-bottom: 80px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    /* Header Styles */
-    header {
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--surface) 100%);
-      padding: 60px 20px 40px;
-      text-align: center;
-      position: relative;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    .header-content {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
     }
 
-    .photo-container {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 30px;
-    }
-
-    .photo-container::before {
-      content: '';
-      position: absolute;
-      inset: -3px;
-      background: linear-gradient(45deg, var(--accent), var(--accent-secondary), var(--accent));
-      border-radius: 20px;
-      z-index: -1;
-      animation: rotate 8s linear infinite;
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .photo-container img {
-      width: 200px;
-      height: 250px;
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid var(--border-color);
       object-fit: cover;
-      object-position: center;
-      border-radius: 16px;
-      transition: transform 0.3s ease;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
     }
 
-    .photo-container:hover img {
-      transform: scale(1.05);
+    .header-text {
+      flex: 1;
     }
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: glow 2s ease-in-out infinite alternate;
+    .name {
+      font-family: var(--mono-font);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
 
-    @keyframes glow {
-      from { filter: brightness(1); }
-      to { filter: brightness(1.1); }
+    .title-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
     }
 
-    header p {
-      font-size: 1.2rem;
+    .role-tag {
+      font-family: var(--mono-font);
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .role-tag.dev {
+      background: rgba(63, 185, 80, 0.15);
+      color: var(--accent-green);
+      border: 1px solid rgba(63, 185, 80, 0.3);
+    }
+
+    .role-tag.data {
+      background: rgba(88, 166, 255, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+    }
+
+    .role-tag.ml {
+      background: rgba(163, 113, 247, 0.15);
+      color: var(--accent-purple);
+      border: 1px solid rgba(163, 113, 247, 0.3);
+    }
+
+    .bio {
       color: var(--text-secondary);
-      margin-bottom: 30px;
-      font-weight: 400;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .bio strong {
+      color: var(--text-primary);
+    }
+
+    .header-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .header-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-family: var(--mono-font);
+      transition: color 0.2s ease;
+    }
+
+    .header-links a:hover {
+      color: var(--link-color);
+    }
+
+    .header-links a i {
+      font-size: 1rem;
     }
 
     /* Navigation */
-    nav {
-      display: flex;
-      visibility: relative;
-      justify-content: center;
-      background: rgba(22, 22, 24, 0.8);
-      backdrop-filter: blur(10px);
-      padding: 15px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      position: sticky;  
+    .nav {
+      position: sticky;
       top: 0;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 0;
       z-index: 100;
-    }
-    .nav-hidden {
-      top: -80px; /* Adjust if your nav is taller/shorter */
+      margin: 0 -24px 40px -24px;
+      padding-left: 24px;
+      padding-right: 24px;
     }
 
-    nav a {
+    .nav-inner {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+    }
+
+    .nav a {
+      font-family: var(--mono-font);
+      font-size: 0.82rem;
       color: var(--text-secondary);
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      position: relative;
-      font-weight: 500;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
     }
 
-    nav a::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      border-radius: 50px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: -1;
-    }
-
-    nav a:hover::before {
-      opacity: 1;
-    }
-
-    nav a:hover {
-      color: var(--light);
-      transform: translateY(-2px);
-      box-shadow: var(--glow);
-    }
-
-    /* Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
+    .nav a:hover {
+      color: var(--text-primary);
+      border-bottom-color: var(--accent-cyan);
     }
 
     /* Section Styles */
-    section {
-      margin: 60px 0;
-      padding: 40px;
-      background: rgba(22, 22, 24, 0.4);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+    .section {
+      margin-bottom: 64px;
     }
 
-    section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      transition: left 0.5s ease;
-    }
-
-    section:hover::before {
-      left: 100%;
-    }
-
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
-    }
-
-    h2 {
-      color: var(--accent);
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 30px;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      border-radius: 2px;
-    }
-
-    /* Skills */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .skills span {
-      padding: 12px 20px;
-      background: linear-gradient(135deg, var(--surface), var(--surface-hover));
-      color: var(--light);
-      border-radius: 50px;
-      font-weight: 500;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      cursor: default;
-    }
-
-    .skills span:hover {
-      transform: translateY(-3px);
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      box-shadow: var(--glow);
-    }
-
-    /* Projects */
-    .project {
-      background: linear-gradient(135deg, var(--surface), var(--surface-hover));
-      padding: 30px;
-      margin: 20px 0;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
-      transform: scale(0);
-      transition: transform 0.5s ease;
-    }
-
-    .project:hover::before {
-      transform: scale(1);
-    }
-
-    .project:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
-      border-color: var(--accent);
-    }
-
-    .project h3 {
-      color: var(--light);
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    /* Buttons */
-    a.button {
-      display: inline-block;
-      padding: 14px 28px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      color: var(--light);
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      margin-top: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    a.button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--accent-secondary), var(--accent));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    a.button:hover::before {
-      opacity: 1;
-    }
-
-    a.button:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--glow);
-    }
-
-    a.button span {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Social Icons */
-    .social {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      list-style: none;
-      margin-top: 30px;
-    }
-
-    .social li {
-      position: relative;
-    }
-
-    .social li::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      top: -45px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--surface);
-      color: var(--light);
-      padding: 8px 12px;
-      font-size: 0.8rem;
-      border-radius: 8px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      pointer-events: none;
-      z-index: 10;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .social li:hover::after {
-      opacity: 1;
-      visibility: visible;
-      top: -50px;
-    }
-
-    .social a {
+    .section-header {
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      font-size: 24px;
-      border-radius: 50%;
-      color: var(--light);
-      background: var(--bg, linear-gradient(135deg, var(--surface), var(--surface-hover)));
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
-    .social a:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    .section-header h2 {
+      font-family: var(--mono-font);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .section-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    .section-icon {
+      color: var(--accent-green);
+      font-size: 1rem;
+    }
+
+    /* Education List */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .edu-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      transition: border-color 0.2s ease;
+    }
+
+    .edu-item:hover {
+      border-color: var(--border-accent);
+    }
+
+    .edu-year {
+      font-family: var(--mono-font);
+      font-size: 0.8rem;
+      color: var(--accent-green);
+      min-width: 100px;
+      padding-top: 2px;
+    }
+
+    .edu-details h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .edu-details p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .edu-details .cgpa {
+      font-family: var(--mono-font);
+      color: var(--accent-cyan);
+      font-size: 0.8rem;
+      margin-top: 6px;
+    }
+
+    /* Skills Grid */
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .skill-category {
+      padding: 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    .skill-category h3 {
+      font-family: var(--mono-font);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-category h3 i {
+      color: var(--accent-green);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      font-family: var(--mono-font);
+      font-size: 0.78rem;
+      padding: 5px 12px;
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Projects List - Minimalist */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .project-item {
+      padding: 20px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-green);
+      transition: all 0.2s ease;
+    }
+
+    .project-item:hover {
+      border-color: var(--border-accent);
+      transform: translateX(4px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      font-family: var(--mono-font);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .project-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--link-color);
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tech-tag {
+      font-family: var(--mono-font);
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      background: rgba(88, 166, 255, 0.1);
+      color: var(--accent-cyan);
+      border-radius: 3px;
+    }
+
+    /* Resume Section */
+    .resume-box {
+      padding: 24px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .resume-text {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .resume-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono-font);
+      font-size: 0.85rem;
+      padding: 10px 20px;
+      background: var(--accent-green);
+      color: var(--bg-primary);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .resume-btn:hover {
+      background: #2ea043;
+      transform: translateY(-1px);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+
+    .contact-item:hover {
+      border-color: var(--border-accent);
+      color: var(--text-primary);
+    }
+
+    .contact-item i {
+      font-size: 1.2rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    .contact-item.email i {
+      color: #ea4335;
+    }
+
+    .contact-item.linkedin i {
+      color: #0077b5;
+    }
+
+    .contact-item.github i {
+      color: var(--text-primary);
+    }
+
+    .contact-item span {
+      font-family: var(--mono-font);
+      font-size: 0.85rem;
     }
 
     /* Footer */
-    footer {
+    .footer {
       text-align: center;
-      padding: 40px;
-      background: var(--secondary);
+      padding: 40px 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: 40px;
+    }
+
+    .footer p {
+      font-family: var(--mono-font);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      font-size: 0.8rem;
       color: var(--text-secondary);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Education section enhancement */
-    #education p {
-      background: linear-gradient(135deg, var(--surface), var(--surface-hover));
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 12px;
-      border-left: 4px solid var(--accent);
-      transition: all 0.3s ease;
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
     }
 
-    #education p:hover {
-      transform: translateX(10px);
-      box-shadow: 0 10px 20px rgba(0, 212, 255, 0.1);
-    }
+    @keyframes pulse {
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      
-      nav {
-        flex-wrap: wrap;
-        gap: 1px;
-        padding: 20px;
+      0%,
+      100% {
+        opacity: 1;
       }
 
-      .container {
-        padding: 20px 15px;
-      }
-      
-      section {
-        padding: 30px 20px;
-        margin: 40px 0;
-      }
-      
-      h2 {
-        font-size: 2rem;
+      50% {
+        opacity: 0.5;
       }
     }
 
-    /* Loading animation for page */
+    /* Terminal-style typing effect for header */
+    .typing-cursor::after {
+      content: '|';
+      animation: blink 1s step-end infinite;
+      color: var(--accent-green);
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* Scroll animations */
     .fade-in {
-      animation: fadeIn 1s ease-in;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 40px 16px;
+      }
+
+      .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .header-links {
+        justify-content: center;
+      }
+
+      .title-line {
+        justify-content: center;
+      }
+
+      .name {
+        font-size: 1.6rem;
+      }
+
+      .nav-inner {
+        gap: 16px;
+      }
+
+      .project-header {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .edu-item {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .resume-box {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header class="fade-in">
-    <div class="photo-container">
-      <img src="assets/images/profile.jpg" alt="Syed Danish Ali">
-    </div>
-    <h1>Syed Danish Ali</h1>
-    <p>AI/ML Enthusiast | Embedded Systems | Developer</p>
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <img src="assets/images/profile.jpg" alt="Syed Danish Ali" class="avatar">
+        <div class="header-text">
+          <h1 class="name">Syed Danish Ali<span class="typing-cursor"></span></h1>
+          <div class="title-line">
+            <span class="role-tag dev"><i class="fa-solid fa-code"></i> Developer</span>
+            <span class="role-tag data"><i class="fa-solid fa-database"></i> Data</span>
+            <span class="role-tag ml"><i class="fa-solid fa-brain"></i> ML/AI</span>
+          </div>
+          <p class="bio">
+            Computer Science Engineering graduate specializing in <strong>AI & Machine Learning</strong>.
+            I build real-world solutions from cancer diagnosis models to IoT systems.
+            Experience includes academic research, virtual internships at <strong>Deloitte</strong> and <strong>British
+              Airways</strong>.
+          </p>
+          <div class="header-links">
+            <a href="mailto:danishsyed237@gmail.com"><i class="fa-solid fa-envelope"></i> danishsyed237@gmail.com</a>
+            <a href="https://github.com/danishsyed-dev" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank"><i
+                class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <ul class="social">
-      <li data-tooltip="Email">
-        <a href="mailto:danishsyed237@gmail.com" aria-label="Email" style="--bg: linear-gradient(135deg, #c71610, #ff4444);">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-      </li>
-      <li data-tooltip="LinkedIn">
-        <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank" aria-label="LinkedIn" style="--bg: linear-gradient(135deg, #0077b5, #0099dd);">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-      </li>
-      <li data-tooltip="GitHub">
-        <a href="https://github.com/danishsyed-dev" target="_blank" aria-label="GitHub" style="--bg: linear-gradient(135deg, #171515, #333333);">
-          <i class="fa-brands fa-github"></i>
-        </a>
-      </li>
-    </ul>
-  </header>
-  
-    <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="#education">// education</a>
+        <a href="#skills">// skills</a>
+        <a href="#projects">// projects</a>
+        <a href="#resume">// resume</a>
+        <a href="#contact">// contact</a>
+      </div>
     </nav>
 
-  <div class="container">
-    <section id="about" class="fade-in">
-      <h2>About Me</h2>
-      <p>
-        I'm <strong>Syed Danish Ali</strong>, a Computer Science Engineering (AI & ML) graduate from Lords Institute of Engineering and Technology, Hyderabad. I also hold a Diploma in Electronics and Communication Engineering.<br><br>
-        I enjoy developing real-world AI/ML solutions from cancer diagnosis models to IoT-powered automation systems. I've worked across machine learning, data pipelines, embedded systems, and published academic research. I've also completed virtual internships with Deloitte and British Airways on Forage.
-      </p>
-    </section>
-
-    <section id="education" class="fade-in">
-      <h2>Education</h2>
-      <p>
-        <strong>B.E. in Computer Science Engineering (AI & ML)</strong><br>
-        Lords Institute of Engineering and Technology, Hyderabad (Osmania University), 2022-2025<br>
-        CGPA: 8.30 / 10
-      </p>
-      <p>
-        <strong>Diploma in Electronics and Communication Engineering</strong><br>
-        Mahaveer Institute of Science and Technology, 2019-2022<br>
-        CGPA: 6.93 / 10
-      </p>
-    </section>
-
-    <section id="skills" class="fade-in">
-      <h2>Skills</h2>
-      <div class="skills">
-        <span>Python</span>
-        <span>Machine Learning</span>
-        <span>Deep Learning</span>
-        <span>NLP</span>
-        <span>Embedded Systems</span>
-        <span>Arduino</span>
-        <span>IOT</span>
-        <span>scikit-learn</span>
-        <span>Pandas</span>
-        <span>TensorFlow</span>
-        <span>PyTorch</span>
-        <span>SQL</span>
-        <span>Firebase</span>
-        <span>MATLAB</span>
-        <span>HTML/CSS/JS/PHP</span>
-        <span>APIs Integration</span>
-        <span>PowerBi</span>
-        <span>Tableau</span>
-        <span>Data Analysis</span>
-        <span>Git & GitHub</span>
+    <!-- Education -->
+    <section id="education" class="section fade-in">
+      <div class="section-header">
+        <i class="fa-solid fa-graduation-cap section-icon"></i>
+        <h2>Education</h2>
+      </div>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-year">2022 — 2025</div>
+          <div class="edu-details">
+            <h3>B.E. in Computer Science Engineering (AI & ML)</h3>
+            <p>Lords Institute of Engineering and Technology, Hyderabad (Osmania University)</p>
+            <div class="cgpa">CGPA: 8.30 / 10</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-year">2019 — 2022</div>
+          <div class="edu-details">
+            <h3>Diploma in Electronics and Communication Engineering</h3>
+            <p>Mahaveer Institute of Science and Technology</p>
+            <div class="cgpa">CGPA: 6.93 / 10</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="projects" class="fade-in">
-      <h2>Projects</h2>
+    <!-- Skills -->
+    <section id="skills" class="section fade-in">
+      <div class="section-header">
+        <i class="fa-solid fa-terminal section-icon"></i>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-code"></i> Languages & Frameworks</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">HTML/CSS/JS</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">MATLAB</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-brain"></i> ML & Data Science</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Pandas</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-chart-line"></i> Data & Analytics</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Firebase</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-microchip"></i> Embedded & IoT</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Embedded Systems</span>
+            <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">IoT</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-tools"></i> Tools & Platforms</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git & GitHub</span>
+            <span class="skill-tag">API Integration</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="project">
-        <h3>ML Models for Cancer Prediction</h3>
-        <p>
-          Built and evaluated ML models using patient records to predict lung cancer outcomes.<br>
-          <strong>Technologies Used:</strong> Python, RFC, KNN, K-means, SVM, and DTC<br>
-        </p>
-        <a class="button" href="https://ijitce.org/index.php/ijitce/article/view/1161" target="_blank">
-          <span>View Publication</span>
+    <!-- Projects -->
+    <section id="projects" class="section fade-in">
+      <div class="section-header">
+        <i class="fa-solid fa-folder-open section-icon"></i>
+        <h2>Projects</h2>
+      </div>
+      <div class="projects-list">
+
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">ML Models for Cancer Prediction</h3>
+            <div class="project-links">
+              <a href="https://ijitce.org/index.php/ijitce/article/view/1161" target="_blank"
+                title="View Publication"><i class="fa-solid fa-file-lines"></i></a>
+            </div>
+          </div>
+          <p class="project-desc">Built and evaluated ML models using patient records to predict lung cancer outcomes.
+            Published in academic journal.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">RFC</span>
+            <span class="tech-tag">KNN</span>
+            <span class="tech-tag">SVM</span>
+            <span class="tech-tag">K-means</span>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Premier League 2025 ML Prediction</h3>
+            <div class="project-links">
+              <a href="https://github.com/danishsyed-dev/PL25_Prediction_ML" target="_blank" title="View Repository"><i
+                  class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <p class="project-desc">Developed a machine learning model to predict outcomes of Premier League matches using
+            historical data.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Scikit-Learn</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">NumPy</span>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Streaming Text Trend Analysis</h3>
+            <div class="project-links"></div>
+          </div>
+          <p class="project-desc">NLP model to detect and visualize trending topics from real-time text streams using a
+            sequential approach.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">Data Preprocessing</span>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">La Liga Forwards Analysis</h3>
+            <div class="project-links">
+              <a href="https://github.com/danishsyed-dev/la-liga-forwards-analysis" target="_blank"
+                title="View Repository"><i class="fa-brands fa-github"></i></a>
+              <a href="http://syeddanishali.me/la-liga-forwards-analysis" target="_blank" title="View Live"><i
+                  class="fa-solid fa-external-link"></i></a>
+            </div>
+          </div>
+          <p class="project-desc">Statistical analysis of La Liga's greatest forwards with visualizations including bar
+            charts and radar diagrams.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">Data Viz</span>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Life RPG — Gamified Habit Tracker</h3>
+            <div class="project-links">
+              <a href="https://github.com/danishsyed-dev/Life-RPG" target="_blank" title="View Repository"><i
+                  class="fa-brands fa-github"></i></a>
+              <a href="http://syeddanishali.me/Life-RPG/" target="_blank" title="Play Live"><i
+                  class="fa-solid fa-external-link"></i></a>
+            </div>
+          </div>
+          <p class="project-desc">Browser-based Life RPG that gamifies daily habits with quests, XP, levels, streaks,
+            and achievements.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">LocalStorage</span>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Weather Forecast Web App</h3>
+            <div class="project-links">
+              <a href="https://github.com/danishsyed-dev/Weather-scraper" target="_blank" title="View Repository"><i
+                  class="fa-brands fa-github"></i></a>
+              <a href="http://syeddanishali.me/Weather-scraper/" target="_blank" title="View Website"><i
+                  class="fa-solid fa-external-link"></i></a>
+            </div>
+          </div>
+          <p class="project-desc">Responsive weather forecasting web app using OpenWeather API with PHP backend.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">API</span>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Smart Highway Light System</h3>
+            <div class="project-links">
+              <a href="assets/documents/(FINAL)SMART HIGHWAY LIGHT WITH MOVEMENT DETECTOR USING ARDUINO.pdf"
+                target="_blank" title="View Documentation"><i class="fa-solid fa-file-pdf"></i></a>
+            </div>
+          </div>
+          <p class="project-desc">IoT-enabled Arduino system that controls street lights using IR and LDR sensors with
+            real-time logic.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">IR Sensors</span>
+            <span class="tech-tag">LDR</span>
+            <span class="tech-tag">IoT</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="section fade-in">
+      <div class="section-header">
+        <i class="fa-solid fa-file-alt section-icon"></i>
+        <h2>Resume</h2>
+      </div>
+      <div class="resume-box">
+        <p class="resume-text">Looking for a detailed overview? Download my latest resume.</p>
+        <a href="assets/documents/Syed_Danish_Ali_Updated_Resume_July2025.pdf" download class="resume-btn">
+          <i class="fa-solid fa-download"></i> Download Resume
         </a>
       </div>
+    </section>
 
-      <div class="project">
-        <h3>Streaming Text Trend Analysis</h3>
-        <p>
-          NLP model to detect and visualize trending topics from real-time text streams using a sequential approach.<br>
-          <strong>Technologies Used:</strong> Python, NLP libraries<br>
-          <strong>Contribution:</strong> Data preprocessing, model engineering, and result interpretation.
-        </p>
+    <!-- Contact -->
+    <section id="contact" class="section fade-in">
+      <div class="section-header">
+        <i class="fa-solid fa-paper-plane section-icon"></i>
+        <h2>Get In Touch</h2>
       </div>
-
-      <div class="project">
-        <h3>Smart Highway Light with Movement Detector (Arduino)</h3>
-        <p>
-          An IoT-enabled Arduino system that controls street lights using IR and LDR sensors and real-time logic.<br>
-          <strong>Technologies Used:</strong> Arduino, IR Sensors, LDR Sensors<br>
-          <strong>Contribution:</strong> Circuit design, coding, and testing.<br>
-        </p>
-        <a class="button" href="assets/documents/(FINAL)SMART HIGHWAY LIGHT WITH MOVEMENT DETECTOR USING ARDUINO.pdf" target="_blank">
-          <span>View Project Details</span>
+      <div class="contact-grid">
+        <a href="mailto:knightdanish@gmail.com" class="contact-item email">
+          <i class="fa-solid fa-envelope"></i>
+          <span>knightdanish@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank" class="contact-item linkedin">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/danishsyed-dev" target="_blank" class="contact-item github">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
         </a>
       </div>
-
-      <div class="project">
-        <h3>Weather Forecast Web App</h3>
-        <p>
-          Built a responsive weather forecasting web app using OpenWeather API.<br>
-          <strong>Technologies Used:</strong> HTML, CSS, JavaScript, PHP, API integration<br>
-        </p>
-        <a class="button" href="https://github.com/danishsyed-dev/Weather-scraper" target="_blank"> <span>View Project Details</span> </a>
-        <a class="button" href="http://syeddanishali.me/Weather-scraper/" target="_blank"> <span>View Website</span> </a>
-      </div>
-
-      <div class="project">
-        <h3>La-Liga-forwards-analysis</h3>
-        <p>
-          Analyzes the greatest forwards in La Liga history using Python. It includes statistical analysis and visualizations like bar charts and radar diagrams.<br>
-          <strong>Tech:</strong> Python, Pandas, Matplotlib<br>
-          <strong>Contribution:</strong> Data Analysis, Data visualizations.<br>
-        </p>
-        <a class="button" href="https://github.com/danishsyed-dev/la-liga-forwards-analysis" target="_blank"> <span>View Repository</span> </a>
-        <a class="button" href="http://syeddanishali.me/la-liga-forwards-analysis" target="_blank"> <span>View Live</span> </a>
-      </div>
-
-      <div class="project">
-        <h3>Life RPG — Turn Your Life Into a Game</h3>
-        <p>
-          A browser-based Life RPG that gamifies daily habits with quests, XP, levels, streaks, and achievements. Users complete real-life tasks to earn rewards and progress their character stats. <br><br>
-          <strong>Technologies Used:</strong> HTML, CSS, JavaScript (Vanilla), LocalStorage, GitHub Pages/Actions<br>
-          <strong>Contribution:</strong> Game design (XP, leveling, quests, achievements), UI/UX, front-end implementation, and CI/CD to GitHub Pages.
-        </p>
-        <a class="button" href="https://github.com/danishsyed-dev/Life-RPG" target="_blank"> <span>View Repository</span> </a>
-        <a class="button" href="http://syeddanishali.me/Life-RPG/" target="_blank"> <span>Play Live</span> </a>
-      </div>
-
-      <div class="project">
-        <h3>Premier Leaguage 2025 Machine Learning Prediction</h3>
-        <p>
-          Developed a machine learning model to predict outcomes of Premier League matches using historical data.<br>
-          <strong>Technologies Used:</strong> Python, Scikit-Learn, Pandas, NumPy<br>
-          <strong>Contribution:</strong> Data collection, feature engineering, model training, and evaluation.
-        </p>
-        <a class="button" href="https://github.com/danishsyed-dev/PL25_Prediction_ML" target="_blank"> <span>View Project Details</span> </a>
-
     </section>
 
-    <section id="resume" class="fade-in">
-      <h2>Resume</h2>
-      <p>Download My Resume:</p>
-      <a class="button" href="assets/documents/Syed_Danish_Ali_Updated_Resume_July2025.pdf" download>
-        <span>📄 Download Resume</span>
-      </a>
-    </section>
-
-    <section id="contact" class="fade-in">
-      <h2>Contact</h2>
-      <ul class="social">
-        <li data-tooltip="Email">
-          <a href="mailto:knightdanish@gmail.com" aria-label="Email" style="--bg: linear-gradient(135deg, #c71610, #ff4444);">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </li>
-        <li data-tooltip="LinkedIn">
-          <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank" aria-label="LinkedIn" style="--bg: linear-gradient(135deg, #0077b5, #0099dd);">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </li>
-        <li data-tooltip="GitHub">
-          <a href="https://github.com/danishsyed-dev" target="_blank" aria-label="GitHub" style="--bg: linear-gradient(135deg, #171515, #333333);">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </li>
-      </ul>
-    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Syed Danish Ali. Built with ❤️</p>
+      <div class="footer-status">
+        <span class="status-dot"></span>
+        <span>Available for opportunities</span>
+      </div>
+    </footer>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Syed Danish Ali. All rights reserved.</p>
-  </footer>
-
   <script>
-    // Smooth scroll to top on load
-    window.onload = function () {
-      window.scrollTo(0, 0);
-      
-      // Add fade-in animations to elements as they come into view
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-      
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-          }
-        });
-      }, observerOptions);
-      
-      // Observe all sections
-      document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-      });
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     };
 
-    // Add subtle parallax effect to background
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const parallax = document.querySelector('body::before');
-      const speed = scrolled * 0.5;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
     });
 
-    // Enhanced smooth scrolling for navigation links
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    // Smooth scroll for navigation
+    document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -715,20 +959,10 @@
         }
       });
     });
-    // Hide nav on scroll down, show on scroll up
-    let lastScrollTop = 0;
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop) {
-        // Scrolling down
-        nav.classList.add('nav-hidden');
-      } else {
-        // Scrolling up
-        nav.classList.remove('nav-hidden');
-      }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll
-    });
+
+    // Scroll to top on load
+    window.onload = () => window.scrollTo(0, 0);
   </script>
 </body>
+
 </html>
