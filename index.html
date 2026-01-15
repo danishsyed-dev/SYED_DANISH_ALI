@@ -413,6 +413,118 @@
       border-radius: 3px;
     }
 
+    /* Blog Section */
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .blog-item {
+      padding: 20px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-purple);
+      transition: all 0.2s ease;
+    }
+
+    .blog-item:hover {
+      border-color: var(--border-accent);
+      transform: translateX(4px);
+    }
+
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .blog-title {
+      font-family: var(--mono-font);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .blog-links {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .blog-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .blog-links a:hover {
+      color: var(--link-color);
+    }
+
+    .blog-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .blog-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .blog-tag {
+      font-family: var(--mono-font);
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      background: rgba(163, 113, 247, 0.1);
+      color: var(--accent-purple);
+      border-radius: 3px;
+    }
+
+    .blog-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .blog-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono-font);
+      font-size: 0.85rem;
+      padding: 12px 24px;
+      background: transparent;
+      color: var(--accent-purple);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      border: 1px solid var(--accent-purple);
+      transition: all 0.2s ease;
+    }
+
+    .blog-btn:hover {
+      background: var(--accent-purple);
+      color: var(--bg-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(163, 113, 247, 0.3);
+    }
+
+    .blog-btn i {
+      transition: transform 0.2s ease;
+    }
+
+    .blog-btn:hover i {
+      transform: translateX(4px);
+    }
+
     /* Resume Section */
     .resume-box {
       padding: 24px;
@@ -831,6 +943,7 @@
         <a href="#education">// education</a>
         <a href="#skills">// skills</a>
         <a href="#projects">// projects</a>
+        <a href="#blog">// blog</a>
         <a href="#resume">// resume</a>
         <a href="#contact">// contact</a>
       </div>
@@ -1058,6 +1171,55 @@
           </div>
         </article>
 
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="section fade-in">
+      <div class="section-header">
+        <i class="fa-solid fa-pen-nib section-icon"></i>
+        <h2>Blog</h2>
+      </div>
+      <div class="blog-list">
+        <article class="blog-item">
+          <div class="blog-header">
+            <h3 class="blog-title">How I Built a RAG System with FastAPI</h3>
+            <div class="blog-links">
+              <a href="https://syeddanishali.me/my-blog/blog/building-rag-system-fastapi/" target="_blank"
+                title="Read Article"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <p class="blog-desc">A deep dive into building a production-ready Retrieval-Augmented Generation system,
+            covering architecture decisions, chunking strategies, and performance optimization.</p>
+          <div class="blog-tags">
+            <span class="blog-tag">RAG</span>
+            <span class="blog-tag">FastAPI</span>
+            <span class="blog-tag">NLP</span>
+            <span class="blog-tag">LLMs</span>
+          </div>
+        </article>
+        <article class="blog-item">
+          <div class="blog-header">
+            <h3 class="blog-title">Comparing ML Models for Cancer Prediction</h3>
+            <div class="blog-links">
+              <a href="https://syeddanishali.me/my-blog/blog/comparing-ml-models-cancer-prediction/" target="_blank"
+                title="Read Article"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <p class="blog-desc">A comprehensive analysis of machine learning algorithms for cancer prediction, examining
+            accuracy, interpretability, and clinical applicability.</p>
+          <div class="blog-tags">
+            <span class="blog-tag">Machine Learning</span>
+            <span class="blog-tag">Healthcare</span>
+            <span class="blog-tag">XGBoost</span>
+            <span class="blog-tag">SHAP</span>
+          </div>
+        </article>
+      </div>
+      <div class="blog-cta">
+        <a href="https://syeddanishali.me/my-blog/" target="_blank" class="blog-btn">
+          <i class="fa-solid fa-blog"></i> View All Posts <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
     </section>
 
