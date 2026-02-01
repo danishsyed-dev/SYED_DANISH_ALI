@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <!-- Analytics -->
   <script type="text/javascript">
     (function (c, l, a, r, i, t, y) {
       c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -9,908 +10,37 @@
       y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "sk26idpbki");
   </script>
+
+  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Syed Danish Ali - Software Developer, Data Analyst & ML Engineer. Building AI/ML solutions, data pipelines, and embedded systems." />
   <title>Syed Danish Ali | Software Developer & ML Engineer</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/icons/favicon.png" />
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Google Fonts - JetBrains Mono for that developer aesthetic -->
+  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-primary: #0d1117;
-      --bg-secondary: #161b22;
-      --bg-tertiary: #21262d;
-      --border-color: #30363d;
-      --border-accent: #238636;
-      --text-primary: #e6edf3;
-      --text-secondary: #8b949e;
-      --text-muted: #6e7681;
-      --accent-green: #3fb950;
-      --accent-cyan: #58a6ff;
-      --accent-purple: #a371f7;
-      --accent-orange: #f0883e;
-      --link-color: #58a6ff;
-      --mono-font: 'JetBrains Mono', 'Fira Code', monospace;
-      --sans-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--sans-font);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    /* Main Container */
-    .wrapper {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 60px 24px;
-    }
-
-    /* Header - Minimal Hero */
-    .header {
-      margin-bottom: 80px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .header-content {
-      display: flex;
-      gap: 32px;
-      align-items: flex-start;
-    }
-
-    .avatar {
-      width: 120px;
-      height: 150px;
-      border-radius: 47%;
-      border: 2% solid var(--border-color);
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .header-text {
-      flex: 1;
-    }
-
-    .name {
-      font-family: var(--mono-font);
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-
-    .title-line {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-
-    .role-tag {
-      font-family: var(--mono-font);
-      font-size: 0.8rem;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-weight: 500;
-    }
-
-    .role-tag.dev {
-      background: rgba(63, 185, 80, 0.15);
-      color: var(--accent-green);
-      border: 1px solid rgba(63, 185, 80, 0.3);
-    }
-
-    .role-tag.data {
-      background: rgba(88, 166, 255, 0.15);
-      color: var(--accent-cyan);
-      border: 1px solid rgba(88, 166, 255, 0.3);
-    }
-
-    .role-tag.ml {
-      background: rgba(163, 113, 247, 0.15);
-      color: var(--accent-purple);
-      border: 1px solid rgba(163, 113, 247, 0.3);
-    }
-
-    .bio {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .bio strong {
-      color: var(--text-primary);
-    }
-
-    .header-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .header-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-family: var(--mono-font);
-      transition: color 0.2s ease;
-    }
-
-    .header-links a:hover {
-      color: var(--link-color);
-    }
-
-    .header-links a i {
-      font-size: 1rem;
-    }
-
-    /* Navigation */
-    .nav {
-      position: sticky;
-      top: 0;
-      background: var(--bg-primary);
-      border-bottom: 1px solid var(--border-color);
-      padding: 12px 0;
-      z-index: 100;
-      margin: 0 -24px 40px -24px;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-
-    .nav-inner {
-      display: flex;
-      gap: 24px;
-      overflow-x: auto;
-    }
-
-    .nav a {
-      font-family: var(--mono-font);
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      padding: 6px 0;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .nav a:hover {
-      color: var(--text-primary);
-      border-bottom-color: var(--accent-cyan);
-    }
-
-    /* Section Styles */
-    .section {
-      margin-bottom: 64px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .section-header h2 {
-      font-family: var(--mono-font);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .section-header::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border-color);
-    }
-
-    .section-icon {
-      color: var(--accent-green);
-      font-size: 1rem;
-    }
-
-    /* Education List */
-    .edu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .edu-item {
-      display: flex;
-      gap: 16px;
-      padding: 16px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      transition: border-color 0.2s ease;
-    }
-
-    .edu-item:hover {
-      border-color: var(--border-accent);
-    }
-
-    .edu-year {
-      font-family: var(--mono-font);
-      font-size: 0.8rem;
-      color: var(--accent-green);
-      min-width: 100px;
-      padding-top: 2px;
-    }
-
-    .edu-details h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-
-    .edu-details p {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-
-    .edu-details .cgpa {
-      font-family: var(--mono-font);
-      color: var(--accent-cyan);
-      font-size: 0.8rem;
-      margin-top: 6px;
-    }
-
-    /* Skills Grid */
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .skill-category {
-      padding: 16px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-    }
-
-    .skill-category h3 {
-      font-family: var(--mono-font);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .skill-category h3 i {
-      color: var(--accent-green);
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-tag {
-      font-family: var(--mono-font);
-      font-size: 0.78rem;
-      padding: 5px 12px;
-      background: var(--bg-tertiary);
-      color: var(--text-secondary);
-      border-radius: 4px;
-      border: 1px solid var(--border-color);
-      transition: all 0.2s ease;
-    }
-
-    .skill-tag:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-    }
-
-    /* Projects List - Minimalist */
-    .projects-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .project-item {
-      padding: 20px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      border-left: 3px solid var(--accent-green);
-      transition: all 0.2s ease;
-    }
-
-    .project-item:hover {
-      border-color: var(--border-accent);
-      transform: translateX(4px);
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 10px;
-    }
-
-    .project-title {
-      font-family: var(--mono-font);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .project-links {
-      display: flex;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .project-links a {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-    }
-
-    .project-links a:hover {
-      color: var(--link-color);
-    }
-
-    .project-desc {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .tech-tag {
-      font-family: var(--mono-font);
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      background: rgba(88, 166, 255, 0.1);
-      color: var(--accent-cyan);
-      border-radius: 3px;
-    }
-
-    /* Blog Section */
-    .blog-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .blog-item {
-      padding: 20px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      border-left: 3px solid var(--accent-purple);
-      transition: all 0.2s ease;
-    }
-
-    .blog-item:hover {
-      border-color: var(--border-accent);
-      transform: translateX(4px);
-    }
-
-    .blog-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 10px;
-    }
-
-    .blog-title {
-      font-family: var(--mono-font);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .blog-links {
-      display: flex;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .blog-links a {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-    }
-
-    .blog-links a:hover {
-      color: var(--link-color);
-    }
-
-    .blog-desc {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-
-    .blog-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-
-    .blog-tag {
-      font-family: var(--mono-font);
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      background: rgba(163, 113, 247, 0.1);
-      color: var(--accent-purple);
-      border-radius: 3px;
-    }
-
-    .blog-cta {
-      display: flex;
-      justify-content: center;
-      margin-top: 24px;
-    }
-
-    .blog-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--mono-font);
-      font-size: 0.85rem;
-      padding: 12px 24px;
-      background: transparent;
-      color: var(--accent-purple);
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      border: 1px solid var(--accent-purple);
-      transition: all 0.2s ease;
-    }
-
-    .blog-btn:hover {
-      background: var(--accent-purple);
-      color: var(--bg-primary);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(163, 113, 247, 0.3);
-    }
-
-    .blog-btn i {
-      transition: transform 0.2s ease;
-    }
-
-    .blog-btn:hover i {
-      transform: translateX(4px);
-    }
-
-    /* Resume Section */
-    .resume-box {
-      padding: 24px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .resume-text {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    .resume-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--mono-font);
-      font-size: 0.85rem;
-      padding: 10px 20px;
-      background: var(--accent-green);
-      color: var(--bg-primary);
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-
-    .resume-btn:hover {
-      background: #2ea043;
-      transform: translateY(-1px);
-    }
-
-    /* Resume Modal */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-container {
-      width: 90%;
-      max-width: 900px;
-      height: 85vh;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transform: scale(0.9) translateY(20px);
-      transition: transform 0.3s ease;
-    }
-
-    .modal-overlay.active .modal-container {
-      transform: scale(1) translateY(0);
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      background: var(--bg-tertiary);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .modal-title {
-      font-family: var(--mono-font);
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .modal-title i {
-      color: var(--accent-green);
-    }
-
-    .modal-actions {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .modal-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--mono-font);
-      font-size: 0.8rem;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .modal-btn.download {
-      background: var(--accent-green);
-      color: var(--bg-primary);
-    }
-
-    .modal-btn.download:hover {
-      background: #2ea043;
-    }
-
-    .modal-btn.close {
-      background: var(--bg-tertiary);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-color);
-    }
-
-    .modal-btn.close:hover {
-      background: var(--border-color);
-      color: var(--text-primary);
-    }
-
-    .modal-body {
-      flex: 1;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .modal-body object,
-    .modal-body iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    .pdf-fallback {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      padding: 40px;
-      text-align: center;
-      background: var(--bg-primary);
-    }
-
-    .pdf-fallback i {
-      font-size: 4rem;
-      color: var(--accent-green);
-      margin-bottom: 20px;
-    }
-
-    .pdf-fallback h3 {
-      font-family: var(--mono-font);
-      font-size: 1.2rem;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-    }
-
-    .pdf-fallback p {
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      max-width: 400px;
-    }
-
-    .pdf-fallback .fallback-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .pdf-fallback .modal-btn {
-      padding: 12px 24px;
-    }
-
-    @media (max-width: 600px) {
-      .modal-container {
-        width: 95%;
-        height: 90vh;
-      }
-
-      .modal-header {
-        flex-direction: column;
-        gap: 12px;
-        padding: 12px 16px;
-      }
-
-      .modal-actions {
-        width: 100%;
-        justify-content: space-between;
-      }
-    }
-
-    /* Contact Section */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      text-decoration: none;
-      color: var(--text-secondary);
-      transition: all 0.2s ease;
-    }
-
-    .contact-item:hover {
-      border-color: var(--border-accent);
-      color: var(--text-primary);
-    }
-
-    .contact-item i {
-      font-size: 1.2rem;
-      width: 24px;
-      text-align: center;
-    }
-
-    .contact-item.email i {
-      color: #ea4335;
-    }
-
-    .contact-item.linkedin i {
-      color: #0077b5;
-    }
-
-    .contact-item.github i {
-      color: var(--text-primary);
-    }
-
-    .contact-item span {
-      font-family: var(--mono-font);
-      font-size: 0.85rem;
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 40px 0;
-      border-top: 1px solid var(--border-color);
-      margin-top: 40px;
-    }
-
-    .footer p {
-      font-family: var(--mono-font);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .footer-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 12px;
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--accent-green);
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.5;
-      }
-    }
-
-    /* Terminal-style typing effect for header */
-    .typing-cursor::after {
-      content: '|';
-      animation: blink 1s step-end infinite;
-      color: var(--accent-green);
-    }
-
-    @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0;
-      }
-    }
-
-    /* Scroll animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .wrapper {
-        padding: 40px 16px;
-      }
-
-      .header-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .header-links {
-        justify-content: center;
-      }
-
-      .title-line {
-        justify-content: center;
-      }
-
-      .name {
-        font-size: 1.6rem;
-      }
-
-      .nav-inner {
-        gap: 16px;
-      }
-
-      .project-header {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .edu-item {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .resume-box {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
   <div class="wrapper">
-    <!-- Header -->
+
+    <!-- ================================
+         HEADER - Hero Section
+         ================================ -->
     <header class="header">
       <div class="header-content">
         <img src="assets/images/profile.jpg" alt="Syed Danish Ali" class="avatar">
@@ -928,10 +58,12 @@
             Seeking research-oriented graduate and assistantship opportunities.
           </p>
           <div class="header-links">
-            <a href="mailto:danishsyed237@gmail.com"><i class="fa-solid fa-envelope"></i> danishsyed237@gmail.com</a>
+            <a href="mailto:knightdanish@outlook.com"><i class="fa-solid fa-envelope"></i> Email me</a>
             <a href="https://github.com/danishsyed-dev" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
             <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank"><i
                 class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://www.researchgate.net/profile/Syed-Danish-Ali?ev=hdr_xprf" target="_blank">
+              <i class="fa-brands fa-researchgate"></i> ResearchGate</a>
             <a id="cy-effective-orcid-url" href="https://orcid.org/0009-0000-3010-0027" target="orcid.widget"
               rel="me noopener noreferrer" style="vertical-align: top">
               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
@@ -942,7 +74,9 @@
       </div>
     </header>
 
-    <!-- Navigation -->
+    <!-- ================================
+         NAVIGATION
+         ================================ -->
     <nav class="nav">
       <div class="nav-inner">
         <a href="#education">// education</a>
@@ -954,7 +88,9 @@
       </div>
     </nav>
 
-    <!-- Education -->
+    <!-- ================================
+         EDUCATION SECTION
+         ================================ -->
     <section id="education" class="section fade-in">
       <div class="section-header">
         <i class="fa-solid fa-graduation-cap section-icon"></i>
@@ -980,7 +116,9 @@
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- ================================
+         SKILLS SECTION
+         ================================ -->
     <section id="skills" class="section fade-in">
       <div class="section-header">
         <i class="fa-solid fa-terminal section-icon"></i>
@@ -1036,7 +174,9 @@
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- ================================
+         PROJECTS SECTION
+         ================================ -->
     <section id="projects" class="section fade-in">
       <div class="section-header">
         <i class="fa-solid fa-folder-open section-icon"></i>
@@ -1044,6 +184,7 @@
       </div>
       <div class="projects-list">
 
+        <!-- Project: Silver Price Prediction -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">Silver Price Prediction Model</h3>
@@ -1066,6 +207,7 @@
           </div>
         </article>
 
+        <!-- Project: RAG API -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">RAG API Using FastAPI</h3>
@@ -1084,6 +226,7 @@
           </div>
         </article>
 
+        <!-- Project: ML Sales Prediction -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">ML Sales Prediction</h3>
@@ -1104,6 +247,7 @@
           </div>
         </article>
 
+        <!-- Project: Meme Matcher -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">Meme Matcher - Real-time Facial Expression to Meme Matching</h3>
@@ -1124,6 +268,7 @@
           </div>
         </article>
 
+        <!-- Project: Fine-Tune SLM -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">Fully Fine-Tune a Small Language Model (Gemma 3 270M)</h3>
@@ -1131,7 +276,9 @@
               <a href="http://github.com/danishsyed-dev/NVIDIA-DGX-Spark-hugging_face_llm_full_fine_tune_tutorial-VIDEO/"
                 target="_blank" title="View Repository"><i class="fa-brands fa-github"></i></a>
               <a href="https://huggingface.co/spaces/danishali11903/FoodExtract-v1" target="_blank"
-                title="View Hugging Face Space"><i class="fa-brands fa-huggingface"></i></a>
+                title="View Hugging Face Space"><img
+                  src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+                  style="width: 1em; vertical-align: middle" alt="Hugging Face" /></a>
             </div>
           </div>
           <p class="project-desc">Supervised Fine-Tuning (SFT) of a Small Language Model (SLM) for a specific task:
@@ -1149,6 +296,7 @@
           </div>
         </article>
 
+        <!-- Project: Cancer Prediction -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">ML Models for Cancer Prediction</h3>
@@ -1168,6 +316,7 @@
           </div>
         </article>
 
+        <!-- Project: Premier League Prediction -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">Premier League 2025 ML Prediction</h3>
@@ -1186,6 +335,7 @@
           </div>
         </article>
 
+        <!-- Project: Trend Analysis -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">Streaming Text Trend Analysis</h3>
@@ -1203,6 +353,7 @@
           </div>
         </article>
 
+        <!-- Project: La Liga Analysis -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">La Liga Forwards Analysis</h3>
@@ -1223,6 +374,7 @@
           </div>
         </article>
 
+        <!-- Project: Life RPG -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">Life RPG — Gamified Habit Tracker</h3>
@@ -1243,6 +395,7 @@
           </div>
         </article>
 
+        <!-- Project: Weather App -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">Weather Forecast Web App</h3>
@@ -1263,12 +416,15 @@
           </div>
         </article>
 
+        <!-- Project: Smart Highway -->
         <article class="project-item">
           <div class="project-header">
             <h3 class="project-title">Smart Highway Light System</h3>
             <div class="project-links">
               <a href="assets/documents/(FINAL)SMART HIGHWAY LIGHT WITH MOVEMENT DETECTOR USING ARDUINO.pdf"
                 target="_blank" title="View Documentation"><i class="fa-solid fa-file-pdf"></i></a>
+              <a href="https://github.com/danishsyed-dev/SMART-HIGHWAY-LIGHTS-WITH-AUTO-CONTROL-SYSTEM" target="_blank"
+                title="View Repository"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
           <p class="project-desc">IoT-enabled Arduino system that controls street lights using IR and LDR sensors with
@@ -1282,15 +438,45 @@
         </article>
 
       </div>
+      <div class="projects-cta">
+        <button class="projects-btn" id="toggleProjects">
+          <i class="fa-solid fa-folder-open"></i>
+          <span>View All Projects</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
     </section>
 
-    <!-- Blog -->
+    <!-- ================================
+         BLOG SECTION
+         ================================ -->
     <section id="blog" class="section fade-in">
       <div class="section-header">
         <i class="fa-solid fa-pen-nib section-icon"></i>
         <h2>Blog</h2>
       </div>
       <div class="blog-list">
+
+        <!-- Blog: Food Extractor -->
+        <article class="blog-item">
+          <div class="blog-header">
+            <h3 class="blog-title">Food Extractor: Extracting Food from Images</h3>
+            <div class="blog-links">
+              <a href="https://syeddanishali.me/my-blog/blog/food-extractor/" target="_blank" title="Read Article"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <p class="blog-desc">A deep dive into building a production-ready Retrieval-Augmented Generation system,
+            using Hugging Face and FastAPI.</p>
+          <div class="blog-tech">
+            <span class="tech-tag">Hugging Face</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Machine Learning</span>
+          </div>
+        </article>
+
+        <!-- Blog: RAG System -->
         <article class="blog-item">
           <div class="blog-header">
             <h3 class="blog-title">How I Built a RAG System with FastAPI</h3>
@@ -1308,6 +494,8 @@
             <span class="blog-tag">LLMs</span>
           </div>
         </article>
+
+        <!-- Blog: Cancer Prediction -->
         <article class="blog-item">
           <div class="blog-header">
             <h3 class="blog-title">Comparing ML Models for Cancer Prediction</h3>
@@ -1325,15 +513,18 @@
             <span class="blog-tag">SHAP</span>
           </div>
         </article>
+
       </div>
       <div class="blog-cta">
         <a href="https://syeddanishali.me/my-blog/" target="_blank" class="blog-btn">
-          <i class="fa-solid fa-blog"></i> View All Posts <i class="fa-solid fa-arrow-right"></i>
+          <i class="fa-solid fa-newspaper"></i> View All Posts <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
     </section>
 
-    <!-- Resume -->
+    <!-- ================================
+         RESUME SECTION
+         ================================ -->
     <section id="resume" class="section fade-in">
       <div class="section-header">
         <i class="fa-solid fa-file-alt section-icon"></i>
@@ -1345,10 +536,11 @@
           <i class="fa-solid fa-eye"></i> View Resume
         </button>
       </div>
-
     </section>
 
-    <!-- Contact -->
+    <!-- ================================
+         CONTACT SECTION
+         ================================ -->
     <section id="contact" class="section fade-in">
       <div class="section-header">
         <i class="fa-solid fa-paper-plane section-icon"></i>
@@ -1357,7 +549,7 @@
       <div class="contact-grid">
         <a href="mailto:knightdanish@gmail.com" class="contact-item email">
           <i class="fa-solid fa-envelope"></i>
-          <span>knightdanish@gmail.com</span>
+          <span>Email me</span>
         </a>
         <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank" class="contact-item linkedin">
           <i class="fa-brands fa-linkedin"></i>
@@ -1370,17 +562,22 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ================================
+         FOOTER
+         ================================ -->
     <footer class="footer">
-      <p>&copy; 2025 Syed Danish Ali. Built with ❤️</p>
+      <p>&copy; 2025 Syed Danish Ali.</p>
       <div class="footer-status">
         <span class="status-dot"></span>
         <span>Available for opportunities</span>
       </div>
     </footer>
+
   </div>
 
-  <!-- Resume Modal (placed at root level for proper z-index) -->
+  <!-- ================================
+       RESUME MODAL
+       ================================ -->
   <div class="modal-overlay" id="resumeModal">
     <div class="modal-container">
       <div class="modal-header">
@@ -1417,73 +614,9 @@
     </div>
   </div>
 
-  <script>
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+  <!-- Custom JavaScript -->
+  <script src="js/main.js"></script>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Smooth scroll for navigation
-    document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Scroll to top on load
-    window.onload = () => window.scrollTo(0, 0);
-
-    // Resume Modal Functionality
-    const resumeModal = document.getElementById('resumeModal');
-    const openModalBtn = document.getElementById('openResumeModal');
-    const closeModalBtn = document.getElementById('closeResumeModal');
-
-    openModalBtn.addEventListener('click', () => {
-      resumeModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-
-    closeModalBtn.addEventListener('click', () => {
-      resumeModal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-
-    // Close modal when clicking outside
-    resumeModal.addEventListener('click', (e) => {
-      if (e.target === resumeModal) {
-        resumeModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
-        resumeModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  </script>
 </body>
 
 </html>
