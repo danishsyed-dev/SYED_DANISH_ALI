@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initResumeModal();
     initProjectsToggle();
-    initMobileHeaderToggle();
     initMobileNavScroll();
 });
 
@@ -45,77 +44,6 @@ function initMobileNavScroll() {
                 behavior: 'smooth'
             });
         });
-    });
-}
-
-/* ============================================
-   MOBILE HEADER FULLSCREEN TOGGLE
-   ============================================ */
-
-/**
- * Initialize mobile header fullscreen hero
- * - Starts fullscreen on page load
- * - Collapses on scroll/swipe down
- */
-function initMobileHeaderToggle() {
-    const header = document.querySelector('.header');
-
-    if (!header) return;
-
-    // Check if mobile device
-    const isMobile = () => window.innerWidth <= 600;
-
-    // On mobile, start with body scroll locked
-    if (isMobile()) {
-        document.body.style.overflow = 'hidden';
-    }
-
-    // Handle scroll/swipe to collapse
-    let touchStartY = 0;
-
-    header.addEventListener('touchstart', (e) => {
-        if (!isMobile() || header.classList.contains('collapsed')) return;
-        touchStartY = e.touches[0].clientY;
-    });
-
-    header.addEventListener('touchmove', (e) => {
-        if (!isMobile() || header.classList.contains('collapsed')) return;
-
-        const touchY = e.touches[0].clientY;
-        const diff = touchStartY - touchY;
-
-        // If swiped down more than 50px, collapse
-        if (diff > 50) {
-            header.classList.add('collapsed');
-            document.body.style.overflow = '';
-        }
-    });
-
-    // Also handle click anywhere to collapse (optional)
-    header.addEventListener('click', (e) => {
-        if (!isMobile() || header.classList.contains('collapsed')) return;
-
-        // Don't collapse if clicking on links
-        if (e.target.tagName === 'A' || e.target.closest('a')) return;
-
-        header.classList.add('collapsed');
-        document.body.style.overflow = '';
-    });
-
-    // Handle escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && isMobile() && !header.classList.contains('collapsed')) {
-            header.classList.add('collapsed');
-            document.body.style.overflow = '';
-        }
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        if (!isMobile()) {
-            header.classList.remove('collapsed');
-            document.body.style.overflow = '';
-        }
     });
 }
 
