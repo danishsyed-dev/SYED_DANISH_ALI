@@ -508,7 +508,7 @@ body {
 }
 
 .blog-item:hover {
-  border-color: var(--border-accent);
+  border-color: var(--accent-purple);
   transform: translateX(4px);
 }
 
