@@ -1093,7 +1093,7 @@ body {
     font-size: 0.75rem;
   }
 
-  /* Navigation - Scrollable */
+  /* Navigation - Wrapped on mobile */
   .nav {
     padding: 10px 0;
     margin: 0 -16px 16px -16px;
@@ -1104,11 +1104,14 @@ body {
   .nav-inner {
     gap: 12px;
     padding-bottom: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
   }
 
   .nav a {
     font-size: 0.75rem;
-    padding: 4px 0;
+    padding: 4px 6px;
   }
 
   /* Sections */
