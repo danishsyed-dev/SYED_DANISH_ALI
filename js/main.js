@@ -8,99 +8,10 @@
  * Initialize all functionality when DOM is ready
  */
 document.addEventListener('DOMContentLoaded', () => {
-    initScrollAnimations();
     initSmoothScroll();
     initResumeModal();
     initProjectsToggle();
-    initMobileNavScroll();
 });
-
-/* ============================================
-   MOBILE NAV AUTO-SCROLL
-   ============================================ */
-
-/**
- * Auto-scroll navigation when a link is clicked on mobile
- * Moves the clicked item to the left, revealing items to its right
- */
-function initMobileNavScroll() {
-    const navInner = document.querySelector('.nav-inner');
-    const navLinks = document.querySelectorAll('.nav-inner a');
-
-    if (!navInner || !navLinks.length) return;
-
-    const isMobile = () => window.innerWidth <= 768;
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (!isMobile()) return;
-
-            // Get the clicked link's position relative to the nav container
-            const linkLeft = link.offsetLeft;
-
-            // Scroll the nav so the clicked item is near the left (with small padding)
-            navInner.scrollTo({
-                left: linkLeft - 16,
-                behavior: 'smooth'
-            });
-        });
-    });
-}
-
-/* ============================================
-   PROJECTS TOGGLE
-   ============================================ */
-
-/**
- * Initialize projects expand/collapse functionality
- */
-function initProjectsToggle() {
-    const toggleBtn = document.getElementById('toggleProjects');
-    const projectsList = document.querySelector('.projects-list');
-
-    if (!toggleBtn || !projectsList) {
-        console.warn('Projects toggle elements not found');
-        return;
-    }
-
-    toggleBtn.addEventListener('click', () => {
-        const isExpanded = projectsList.classList.toggle('expanded');
-        toggleBtn.classList.toggle('expanded');
-
-        // Update button text
-        const textSpan = toggleBtn.querySelector('span');
-        if (textSpan) {
-            textSpan.textContent = isExpanded ? 'Show Less' : 'View All Projects';
-        }
-    });
-}
-
-/* ============================================
-   SCROLL ANIMATIONS
-   ============================================ */
-
-/**
- * Initialize Intersection Observer for fade-in animations
- */
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    // Observe all fade-in elements
-    document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-    });
-}
 
 /* ============================================
    SMOOTH SCROLL NAVIGATION
@@ -110,7 +21,7 @@ function initScrollAnimations() {
  * Initialize smooth scroll for anchor links
  */
 function initSmoothScroll() {
-    document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
@@ -195,3 +106,30 @@ function closeModal(modal) {
 window.onload = () => {
     window.scrollTo(0, 0);
 };
+
+/* ============================================
+   PROJECTS TOGGLE
+   ============================================ */
+
+/**
+ * Initialize projects expand functionality
+ */
+function initProjectsToggle() {
+    const toggleBtn = document.getElementById('toggleProjectsBtn');
+    const hiddenProjects = document.querySelectorAll('.hidden-project');
+    const btnContainer = document.getElementById('viewAllProjectsContainer');
+
+    if (!toggleBtn || !hiddenProjects.length) return;
+
+    toggleBtn.addEventListener('click', () => {
+        // Unhide all past initial 6 projects
+        hiddenProjects.forEach(proj => {
+            proj.style.display = 'flex';
+        });
+        
+        // Hide the view all button now that everything is visible
+        if(btnContainer) {
+            btnContainer.style.display = 'none';
+        }
+    });
+}

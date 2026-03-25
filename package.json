@@ -1,0 +1,24 @@
+{
+  "name": "syed_danish_ali",
+  "version": "1.0.0",
+  "description": "A modern, responsive portfolio website showcasing my skills as an AI/ML enthusiast, embedded systems developer, and software engineer.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danishsyed-dev/SYED_DANISH_ALI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/danishsyed-dev/SYED_DANISH_ALI/issues"
+  },
+  "homepage": "https://github.com/danishsyed-dev/SYED_DANISH_ALI#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

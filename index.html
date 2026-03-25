@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 
 <head>
-  <!-- Analytics -->
+  <!-- Analytics from original index.html -->
   <script type="text/javascript">
     (function (c, l, a, r, i, t, y) {
       c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -12,8 +12,8 @@
   </script>
 
   <!-- Meta Tags -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta name="description"
     content="Syed Danish Ali - Software Developer, Data Analyst & ML Engineer. Building AI/ML solutions, data pipelines, and embedded systems." />
   <title>Syed Danish Ali | Software Developer & ML Engineer</title>
@@ -22,736 +22,790 @@
   <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
   <link rel="apple-touch-icon" href="assets/icons/favicon.png" />
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome Icons (kept for modal UI and some icons if needed from main.js) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <!-- Retro UI Fonts, Tailwind, Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 
-  <!-- Custom Stylesheet -->
+  <!-- Main Stylesheet (Compiled via Tailwind CLI) -->
   <link rel="stylesheet" href="css/styles.css?v=1.1" />
 </head>
 
-<body>
-  <div class="wrapper">
-
-    <!-- ================================
-         HEADER - Hero Section
-         ================================ -->
-    <header class="header">
-      <div class="header-content">
-        <img src="assets/images/profile.jpg" alt="Syed Danish Ali" class="avatar">
-        <div class="header-text">
-          <h1 class="name">Syed Danish Ali<span class="typing-cursor"></span></h1>
-          <div class="title-line">
-            <span class="role-tag dev"><i class="fa-solid fa-code"></i> Developer</span>
-            <span class="role-tag data"><i class="fa-solid fa-database"></i> Data</span>
-            <span class="role-tag ml"><i class="fa-solid fa-brain"></i> ML/AI</span>
+<body class="selection:bg-accent-yellow/50 overflow-x-hidden w-full relative">
+  <div class="wrapper w-full overflow-hidden">
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#f8f7ee] border-b-4 border-black">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4 group cursor-pointer">
+          <div
+            class="w-10 h-10 border-2 border-black bg-accent-orange shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+            <img class="w-full h-full object-cover" src="assets/images/avatar.png" alt="Syed Danish Ali" />
           </div>
-          <p class="bio">
-            <strong>AI & Machine Learning</strong> graduate focused on ML, NLP, Information Retrieval, and
-            Learning-to-Rank research.
-            Built real-world systems ranging from cancer prediction models to ML-based ranking engines.
-            Seeking research-oriented graduate and assistantship opportunities.
-          </p>
-          <div class="header-links">
-            <a href="mailto:knightdanish@outlook.com"><i class="fa-solid fa-envelope"></i> Email me</a>
-            <a href="https://github.com/danishsyed-dev" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank"><i
-                class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="https://www.researchgate.net/profile/Syed-Danish-Ali?ev=hdr_xprf" target="_blank">
-              <i class="fa-brands fa-researchgate"></i> ResearchGate</a>
-            <a id="cy-effective-orcid-url" href="https://orcid.org/0009-0000-3010-0027" target="orcid.widget"
-              rel="me noopener noreferrer" style="vertical-align: top">
-              <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-                style="width: 1em; margin-inline-start: 0.5em" alt="ORCID iD icon" />
-              ORCID</a>
-          </div>
+          <span class="text-xl font-black text-black uppercase font-headline">S. DANISH ALI</span>
         </div>
-      </div>
-    </header>
-
-    <!-- ================================
-         NAVIGATION
-         ================================ -->
-    <nav class="nav">
-      <div class="nav-inner">
-        <a href="#education">// education</a>
-        <a href="#skills">// skills</a>
-        <a href="#projects">// projects</a>
-        <a href="#blog">// blog</a>
-        <a href="#resume">// resume</a>
-        <a href="#contact">// contact</a>
+        <div class="hidden md:flex gap-8 items-center font-headline font-bold text-sm tracking-tighter">
+          <a class="text-black hover:text-accent-orange transition-all hover:translate-y-[-1px]"
+            href="#education">EDUCATION</a>
+          <a class="text-black hover:text-accent-orange transition-all hover:translate-y-[-1px]"
+            href="#skills">SKILLS</a>
+          <a class="text-black hover:text-accent-orange transition-all hover:translate-y-[-1px]"
+            href="#projects">PROJECTS</a>
+          <a class="text-black hover:text-accent-orange transition-all hover:translate-y-[-1px]" href="#blog">BLOG</a>
+          <button id="openResumeModal"
+            class="bg-accent-yellow px-4 py-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all">
+            RESUME
+          </button>
+        </div>
+        <button class="md:hidden text-black">
+          <span class="material-symbols-outlined font-black">menu</span>
+        </button>
       </div>
     </nav>
 
-    <!-- ================================
-         EDUCATION SECTION
-         ================================ -->
-    <section id="education" class="section fade-in">
-      <div class="section-header">
-        <i class="fa-solid fa-graduation-cap section-icon"></i>
-        <h2>Education</h2>
-      </div>
-      <div class="edu-list">
-        <div class="edu-item">
-          <div class="edu-year">2022 — 2025</div>
-          <div class="edu-details">
-            <h3>B.E. in Computer Science Engineering (AI & ML)</h3>
-            <p>Lords Institute of Engineering and Technology, Hyderabad (Osmania University)</p>
-            <div class="cgpa">CGPA: 8.30 / 10</div>
+    <main class="pt-24 pb-20">
+      <!-- Hero Section -->
+      <section class="max-w-7xl mx-auto px-6 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Content -->
+        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+          <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+            SYED <br class="hidden lg:block"/><span class="bg-accent-orange px-4 text-white border-4 border-black inline-block -rotate-1 lg:mt-2">DANISH
+              ALI</span>
+          </h1>
+          
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
+            <span class="px-6 py-2 border-2 border-black bg-parchment-dark font-headline font-bold uppercase text-sm shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">Developer</span>
+            <span class="px-6 py-2 border-2 border-black bg-accent-green font-headline font-bold uppercase text-sm shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">Data Analyst</span>
+            <span class="px-6 py-2 border-2 border-black bg-accent-yellow font-headline font-bold uppercase text-sm shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">ML/AI</span>
           </div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-year">2019 — 2022</div>
-          <div class="edu-details">
-            <h3>Diploma in Electronics and Communication Engineering</h3>
-            <p>Mahaveer Institute of Science and Technology</p>
-            <div class="cgpa">CGPA: 6.93 / 10</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================
-         SKILLS SECTION
-         ================================ -->
-    <section id="skills" class="section fade-in">
-      <div class="section-header">
-        <i class="fa-solid fa-terminal section-icon"></i>
-        <h2>Skills</h2>
-      </div>
-      <div class="skills-container">
-        <div class="skill-category">
-          <h3><i class="fa-solid fa-code"></i> Languages & Frameworks</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">HTML/CSS/JS</span>
-            <span class="skill-tag">PHP</span>
-            <span class="skill-tag">MATLAB</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fa-solid fa-brain"></i> ML & Data Science</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Deep Learning</span>
-            <span class="skill-tag">NLP</span>
-            <span class="skill-tag">scikit-learn</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">Pandas</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fa-solid fa-chart-line"></i> Data & Analytics</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Data Analysis</span>
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">Tableau</span>
-            <span class="skill-tag">Firebase</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fa-solid fa-microchip"></i> Embedded & IoT</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Embedded Systems</span>
-            <span class="skill-tag">Arduino</span>
-            <span class="skill-tag">IoT</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fa-solid fa-tools"></i> Tools & Platforms</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Git & GitHub</span>
-            <span class="skill-tag">API Integration</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================
-         PROJECTS SECTION
-         ================================ -->
-    <section id="projects" class="section fade-in">
-      <div class="section-header">
-        <i class="fa-solid fa-folder-open section-icon"></i>
-        <h2>Projects</h2>
-      </div>
-      <div class="projects-list">
-        <!-- Project: RelayContext -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">RelayContext</h3>
-            <div class="project-links">
-              <a href="https://github.com/danishsyed-dev/RelayContext" target="_blank" title="View Repository"><i
-                  class="fa-brands fa-github"></i></a>
-            </div>
-          </div>
-          <p class="project-desc">
-            A Node.js-based CLI tool that captures and persists structured AI coding context-reasoning, decisions, and
-            task state - alongside Git branches. It enables seamless continuation of AI-assisted development across
-            sessions, IDEs, and devices without re-explaining project architecture or progress.
+          
+          <p class="max-w-2xl text-xl md:text-2xl font-medium mb-12 leading-snug border-l-0 lg:border-l-8 border-black pl-0 lg:pl-8 text-left">
+            <strong>AI & Machine Learning</strong> graduate focused on ML, NLP, Information Retrieval, and Learning-to-Rank research. Built real-world systems ranging from cancer prediction models to ML-based ranking engines. Seeking research-oriented graduate and assistantship opportunities.
           </p>
-          <div class="project-tech">
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">NPM Module</span>
-            <span class="tech-tag">CLI Development</span>
-            <span class="tech-tag">Git Integration</span>
-            <span class="tech-tag">JSON</span>
-            <span class="tech-tag">Developer Productivity</span>
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 w-full max-w-3xl">
+            <a class="flex items-center justify-center gap-2 py-4 border-2 border-black bg-white font-headline font-bold text-xs uppercase hover:bg-parchment-dark transition-colors shadow-hard"
+              href="mailto:knightdanish@outlook.com">
+              <span class="material-symbols-outlined text-lg">mail</span> email
+            </a>
+            <a class="flex items-center justify-center gap-2 py-4 border-2 border-black bg-white font-headline font-bold text-xs uppercase hover:bg-parchment-dark transition-colors shadow-hard"
+              href="https://github.com/danishsyed-dev" target="_blank">
+              <i class="fa-brands fa-github text-lg"></i> github
+            </a>
+            <a class="flex items-center justify-center gap-2 py-4 border-2 border-black bg-white font-headline font-bold text-xs uppercase hover:bg-parchment-dark transition-colors shadow-hard"
+              href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank">
+              <span class="material-symbols-outlined text-lg">work</span> linkedin
+            </a>
+            <a class="flex items-center justify-center gap-2 py-4 border-2 border-black bg-white font-headline font-bold text-xs uppercase hover:bg-parchment-dark transition-colors shadow-hard col-span-2 md:col-span-1"
+              href="https://www.researchgate.net/profile/Syed-Danish-Ali?ev=hdr_xprf" target="_blank">
+              <i class="fa-brands fa-researchgate text-lg"></i> r-gate
+            </a>
+            <a class="flex items-center justify-center gap-2 py-4 border-2 border-black bg-white font-headline font-bold text-xs uppercase hover:bg-parchment-dark transition-colors shadow-hard col-span-2 md:col-span-1 xl:col-span-1"
+              href="https://orcid.org/0009-0000-3010-0027" target="_blank">
+              <i class="fa-brands fa-orcid text-lg"></i> orcid
+            </a>
           </div>
-        </article>
+        </div>
 
-        <!-- Project: ML Income Predictor-->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">InComeIQ: ML Income Predictor</h3>
-            <div class="project-links">
-              <a href="https://github.com/danishsyed-dev/InComeIQ" target="_blank" title="View Repository"><i
-                  class="fa-brands fa-github"></i></a>
+        <!-- Right Column: Avatar -->
+        <div class="lg:col-span-5 relative flex flex-col justify-center items-center lg:items-end order-1 lg:order-2 w-full mt-12 lg:mt-0">
+          <div class="relative w-56 md:w-80 lg:w-[350px]">
+            <!-- Decorative Arch Backdrop -->
+            <div class="absolute inset-0 bg-accent-green border-4 border-b-8 border-black rounded-t-full translate-x-4 translate-y-4 shadow-hard-lg"></div>
+            <!-- The floating avatar -->
+            <img class="relative block bottom-0 left-1/2 -translate-x-1/2 w-[115%] sm:w-[125%] max-w-none h-auto z-10 drop-shadow-[8px_8px_0_rgba(0,0,0,1)] hover:scale-105 transition-all duration-500 origin-bottom" 
+                 style="clip-path: inset(0 0 4px 0);"
+                 src="assets/images/avatar.png" 
+                 alt="Profile Avatar" />
+          </div>
+        </div>
+        
+      </section>
+
+      <!-- Education Section -->
+      <section class="max-w-7xl mx-auto px-6 py-24" id="education">
+        <div class="border-b-8 border-black mb-16">
+          <h2 class="font-headline text-5xl font-black mb-4">EDUCATION.LOG</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Degree 1 -->
+          <div class="relative group">
+            <div class="absolute -top-6 left-0 h-6 w-32 bg-accent-orange border-t-4 border-x-4 border-black folder-tab">
+            </div>
+            <div
+              class="p-8 border-4 border-black bg-white shadow-hard-lg hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all">
+              <span class="text-xs font-mono font-bold text-accent-orange mb-2 block uppercase">2022 — 2025</span>
+              <h3 class="text-2xl font-black font-headline mb-2">B.E. in Computer Science Engineering (AI & ML)</h3>
+              <p class="font-bold text-lg mb-4 underline decoration-accent-green decoration-4">Lords Institute of
+                Engineering and Technology (Osmania University)</p>
+              <p class="text-sm font-medium leading-relaxed italic">CGPA: 8.30 / 10</p>
             </div>
           </div>
-          <p class="project-desc">A production-ready Machine Learning pipeline and web application for demographic
-            income classification. Features an object-oriented training pipeline, REST APIs, and dynamic feature
-            explainability.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Scikit-Learn</span>
-            <span class="tech-tag">XGBoost</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">SQLAlchemy</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Matplotlib</span>
-            <span class="tech-tag">HTML/CSS</span>
-          </div>
-        </article>
-
-        <!-- Project: Housing Price Prediction System-->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Housing Price Prediction System</h3>
-            <div class="project-links">
-              <a href="http://github.com/danishsyed-dev/Housing-Price-Prediction-System/" target="_blank"
-                title="View Repository"><i class="fa-brands fa-github"></i></a>
-              <!-- <a href="https://danishali11903-housing-price-prediction-system.hf.space/" target="_blank"
-                title="View App"><i class="fa-solid fa-external-link"></i></a> -->
+          <!-- Degree 2 -->
+          <div class="relative group">
+            <div class="absolute -top-6 left-0 h-6 w-32 bg-accent-yellow border-t-4 border-x-4 border-black folder-tab">
+            </div>
+            <div
+              class="p-8 border-4 border-black bg-white shadow-hard-lg hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all">
+              <span class="text-xs font-mono font-bold text-accent-yellow mb-2 block uppercase">2019 — 2022</span>
+              <h3 class="text-2xl font-black font-headline mb-2">Diploma in Electronics and Communication Engineering
+              </h3>
+              <p class="font-bold text-lg mb-4 underline decoration-accent-orange decoration-4">Mahaveer Institute of
+                Science and Technology</p>
+              <p class="text-sm font-medium leading-relaxed italic">CGPA: 6.93 / 10</p>
             </div>
           </div>
-          <p class="project-desc">An End-to-End Machine Learning pipeline for price prediction, built using ZenML and
-            MLflow.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">scikit-learn</span>
-            <span class="tech-tag">ZenML</span>
-            <span class="tech-tag">MLflow</span>
-            <span class="tech-tag">pytest</span>
-            <span class="tech-tag">Seaborn</span>
-            <span class="tech-tag">Matplotlib</span>
-          </div>
-        </article>
+        </div>
+      </section>
 
-        <!-- Project: Silver Price Prediction -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Silver Price Prediction Model</h3>
-            <div class="project-links">
-              <a href="http://github.com/danishsyed-dev/Silver-Price-Prediction/" target="_blank"
-                title="View Repository"><i class="fa-brands fa-github"></i></a>
-              <a href="https://danishali11903-silver-price-prediction.hf.space/" target="_blank" title="View App"><i
-                  class="fa-solid fa-external-link"></i></a>
+      <!-- Tech Stack -->
+      <section class="bg-parchment-dark py-24 border-y-4 border-black" id="skills">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex items-center gap-4 mb-16">
+            <h2 class="font-headline text-5xl font-black">TECH_STACK</h2>
+            <div class="flex-grow h-4 bg-black"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Languages & Frameworks -->
+            <div class="md:col-span-2 relative">
+              <div class="absolute -top-6 left-0 h-6 w-40 bg-black border-t-4 border-x-4 border-black folder-tab"></div>
+              <div class="p-8 border-4 border-black bg-white shadow-hard h-full">
+                <div class="flex items-center gap-3 mb-6">
+                  <span class="material-symbols-outlined text-4xl text-accent-orange">code</span>
+                  <h3 class="font-headline text-2xl font-black">LANGS & FRAMEWORKS</h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-4 py-2 border-2 border-black bg-parchment font-mono text-sm font-bold">Python</span>
+                  <span class="px-4 py-2 border-2 border-black bg-parchment font-mono text-sm font-bold">SQL</span>
+                  <span
+                    class="px-4 py-2 border-2 border-black bg-parchment font-mono text-sm font-bold">HTML/CSS/JS</span>
+                  <span class="px-4 py-2 border-2 border-black bg-parchment font-mono text-sm font-bold">PHP</span>
+                  <span class="px-4 py-2 border-2 border-black bg-parchment font-mono text-sm font-bold">MATLAB</span>
+                </div>
+              </div>
+            </div>
+            <!-- ML & Data Science -->
+            <div class="md:row-span-2 relative">
+              <div
+                class="absolute -top-6 left-0 h-6 w-32 bg-accent-green border-t-4 border-x-4 border-black folder-tab">
+              </div>
+              <div class="p-8 border-4 border-black bg-white shadow-hard h-full">
+                <span class="material-symbols-outlined text-4xl text-accent-green mb-6 block"
+                  style="font-variation-settings: 'FILL' 1;">psychology</span>
+                <h3 class="font-headline text-2xl font-black mb-6">ML & DATA SCIENCE</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3 font-mono font-bold border-b-2 border-black/10 pb-2">
+                    <span class="w-3 h-3 bg-accent-green border border-black"></span> Machine Learning
+                  </li>
+                  <li class="flex items-center gap-3 font-mono font-bold border-b-2 border-black/10 pb-2">
+                    <span class="w-3 h-3 bg-accent-green border border-black"></span> Deep Learning / NLP
+                  </li>
+                  <li class="flex items-center gap-3 font-mono font-bold border-b-2 border-black/10 pb-2">
+                    <span class="w-3 h-3 bg-accent-green border border-black"></span> scikit-learn
+                  </li>
+                  <li class="flex items-center gap-3 font-mono font-bold border-b-2 border-black/10 pb-2">
+                    <span class="w-3 h-3 bg-accent-green border border-black"></span> TensorFlow / PyTorch
+                  </li>
+                  <li class="flex items-center gap-3 font-mono font-bold pb-2">
+                    <span class="w-3 h-3 bg-accent-green border border-black"></span> Pandas
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Analytics -->
+            <div class="relative">
+              <div
+                class="absolute -top-6 left-0 h-6 w-32 bg-accent-yellow border-t-4 border-x-4 border-black folder-tab">
+              </div>
+              <div class="p-8 border-4 border-black bg-white shadow-hard h-full">
+                <span class="material-symbols-outlined text-4xl text-accent-yellow mb-4 block">analytics</span>
+                <h3 class="font-headline text-xl font-black mb-2">DATA & ANALYTICS</h3>
+                <p class="font-mono text-xs font-bold leading-relaxed">Data Analysis, Power BI, Tableau, Firebase.</p>
+              </div>
+            </div>
+            <!-- Embedded & IoT -->
+            <div class="md:col-span-2 relative">
+              <div
+                class="absolute -top-6 left-0 h-6 w-40 bg-accent-orange border-t-4 border-x-4 border-black folder-tab">
+              </div>
+              <div class="p-8 border-4 border-black bg-white shadow-hard">
+                <div class="flex justify-between items-center mb-4">
+                  <h3 class="font-headline text-2xl font-black">EMBEDDED & IoT</h3>
+                  <span class="material-symbols-outlined text-3xl text-black">settings_input_component</span>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-4 py-2 border-2 border-black bg-parchment font-mono text-sm font-bold">Embedded
+                    Systems</span>
+                  <span class="px-4 py-2 border-2 border-black bg-parchment font-mono text-sm font-bold">Arduino</span>
+                  <span class="px-4 py-2 border-2 border-black bg-parchment font-mono text-sm font-bold">IoT</span>
+                </div>
+              </div>
+            </div>
+            <!-- Tools -->
+            <div class="relative">
+              <div class="absolute -top-6 left-0 h-6 w-32 bg-black border-t-4 border-x-4 border-black folder-tab"></div>
+              <div class="p-8 border-4 border-black bg-white shadow-hard h-full">
+                <span class="material-symbols-outlined text-4xl text-black mb-4 block">terminal</span>
+                <h3 class="font-headline text-xl font-black mb-2">TOOLS & PLATFORMS</h3>
+                <p class="font-mono text-xs font-bold">Git & GitHub, API Integration.</p>
+              </div>
             </div>
           </div>
-          <p class="project-desc">An end-to-end machine learning project to predict silver prices for the Indian market.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">scikit-learn</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">REST API</span>
-            <span class="tech-tag">ML Model</span>
-          </div>
-        </article>
+        </div>
+      </section>
 
-        <!-- Project: RAG API -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">RAG API Using FastAPI</h3>
-            <div class="project-links">
-              <a href="http://github.com/danishsyed-dev/RAG-API/" target="_blank" title="View Repository"><i
-                  class="fa-brands fa-github"></i></a>
+      <!-- Projects Section -->
+      <section class="max-w-7xl mx-auto px-6 py-24" id="projects">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+          <div>
+            <h2 class="font-headline text-6xl font-black tracking-tighter">PROJECT_REPO</h2>
+            <div class="h-2 w-48 bg-accent-green mt-2"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12" id="projectsContainer">
+
+          <!-- RelayContext -->
+          <div class="group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">RelayContext</h3>
+                <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/RelayContext"
+                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">
+                A Node.js-based CLI tool that captures and persists structured AI coding context-reasoning, decisions,
+                and task state - alongside Git branches. It enables seamless continuation of AI-assisted development
+                across sessions, IDEs, and devices without re-explaining project architecture or progress.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Node.js</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">NPM
+                  Module</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">CLI</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Git</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">FastAPI-based RAG API using ollama's TinyLlama and Chromadb for generating responses
-            to user queries.</p>
-          <div class="project-tech">
-            <span class="tech-tag">FastAPI</span>
-            <span class="tech-tag">ChromaDB</span>
-            <span class="tech-tag">TinyLlama</span>
-            <span class="tech-tag">Python 3.9+</span>
-          </div>
-        </article>
 
-        <!-- Project: ML Sales Prediction -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">ML Sales Prediction</h3>
-            <div class="project-links">
-              <a href="http://github.com/danishsyed-dev/ml-sales-prediction/" target="_blank" title="View Repository"><i
-                  class="fa-brands fa-github"></i></a>
+          <!-- InComeIQ -->
+          <div class="group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">InComeIQ: ML Income Predictor</h3>
+                <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/InComeIQ"
+                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">
+                A production-ready Machine Learning pipeline and web application for demographic income classification.
+                Features an object-oriented training pipeline, REST APIs, and dynamic feature explainability.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Scikit-Learn</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">XGBoost</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Flask</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Docker</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">A dynamic pricing system for an online retailer using predictions served by ML models:
-            A multi-layered Feedforward Neural Network, A Light GBM regressor and An Elastic Net, hosted on the
-            containerized serverless architecture.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">hashlib</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">NumPy</span>
-          </div>
-        </article>
 
-        <!-- Project: Meme Matcher -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Meme Matcher - Real-time Facial Expression to Meme Matching</h3>
-            <div class="project-links">
-              <a href="http://github.com/danishsyed-dev/Meme-Matcher/" target="_blank" title="View Repository"><i
-                  class="fa-brands fa-github"></i></a>
+          <!-- Housing Price Prediction -->
+          <div class="group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">Housing Price Prediction System</h3>
+                <a class="text-black hover:text-accent-orange"
+                  href="http://github.com/danishsyed-dev/Housing-Price-Prediction-System/" target="_blank"><i
+                    class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">
+                An End-to-End Machine Learning pipeline for price prediction, built using ZenML and MLflow.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">ZenML</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">MLflow</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">A real-time computer vision application that matches your facial expressions and hand
-            gestures to iconic internet memes using MediaPipe's AI-powered face and hand detection.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">NumPy</span>
-            <span class="tech-tag">Pathlib</span>
-            <span class="tech-tag">Tkinter</span>
-            <span class="tech-tag">OpenCV</span>
-            <span class="tech-tag">MediaPipe</span>
-          </div>
-        </article>
 
-        <!-- Project: Fine-Tune SLM -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Fully Fine-Tune a Small Language Model (Gemma 3 270M)</h3>
-            <div class="project-links">
-              <a href="http://github.com/danishsyed-dev/NVIDIA-DGX-Spark-hugging_face_llm_full_fine_tune_tutorial-VIDEO/"
-                target="_blank" title="View Repository"><i class="fa-brands fa-github"></i></a>
-              <a href="https://huggingface.co/spaces/danishali11903/FoodExtract-v1" target="_blank"
-                title="View Hugging Face Space"><img
-                  src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
-                  style="width: 1em; vertical-align: middle" alt="Hugging Face" /></a>
+          <!-- Silver Price Prediction -->
+          <div class="group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">Silver Price Prediction Model</h3>
+                <div class="flex gap-2">
+                  <a class="text-black hover:text-accent-orange"
+                    href="http://github.com/danishsyed-dev/Silver-Price-Prediction/" target="_blank"><i
+                      class="fa-brands fa-github text-3xl"></i></a>
+                  <a class="text-black hover:text-accent-orange"
+                    href="https://danishali11903-silver-price-prediction.hf.space/" target="_blank"><span
+                      class="material-symbols-outlined text-3xl">open_in_new</span></a>
+                </div>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">
+                An end-to-end machine learning project to predict silver prices for the Indian market.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">scikit-learn</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Flask</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">Supervised Fine-Tuning (SFT) of a Small Language Model (SLM) for a specific task:
-            extracting food and drink items from text. The fine-tuned model can process text inputs and return
-            structured data about food/drink content.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">NumPy</span>
-            <span class="tech-tag">transformers</span>
-            <span class="tech-tag">gradio</span>
-            <span class="tech-tag">DataSets</span>
-            <span class="tech-tag">trl</span>
-            <span class="tech-tag">hugging_face</span>
-          </div>
-        </article>
 
-        <!-- Project: Cancer Prediction -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">ML Models for Cancer Prediction</h3>
-            <div class="project-links">
-              <a href="https://ijitce.org/index.php/ijitce/article/view/1161" target="_blank"
-                title="View Publication"><i class="fa-solid fa-file-lines"></i></a>
+          <!-- RAG API -->
+          <div class="group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">RAG API Using FastAPI</h3>
+                <a class="text-black hover:text-accent-orange" href="http://github.com/danishsyed-dev/RAG-API/"
+                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">
+                FastAPI-based RAG API using ollama's TinyLlama and Chromadb for generating responses to user queries.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">FastAPI</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">ChromaDB</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">TinyLlama</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">Built and evaluated ML models using patient records to predict lung cancer outcomes.
-            Published in academic journal.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">RFC</span>
-            <span class="tech-tag">KNN</span>
-            <span class="tech-tag">SVM</span>
-            <span class="tech-tag">K-means</span>
-          </div>
-        </article>
 
-        <!-- Project: Premier League Prediction -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Premier League 2025 ML Prediction</h3>
-            <div class="project-links">
-              <a href="https://github.com/danishsyed-dev/PL25_Prediction_ML" target="_blank" title="View Repository"><i
-                  class="fa-brands fa-github"></i></a>
+          <!-- ML Sales Prediction -->
+          <div class="group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">ML Sales Prediction</h3>
+                <a class="text-black hover:text-accent-orange"
+                  href="http://github.com/danishsyed-dev/ml-sales-prediction/" target="_blank"><i
+                    class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">
+                A dynamic pricing system using predictions served by ML models: Feedforward NN, Light GBM regressor &
+                Elastic Net.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Flask</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">NumPy</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">Developed a machine learning model to predict outcomes of Premier League matches using
-            historical data.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Scikit-Learn</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">NumPy</span>
-          </div>
-        </article>
 
-        <!-- Project: Trend Analysis -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Streaming Text Trend Analysis</h3>
-            <div class="project-links">
-              <a href="https://github.com/danishsyed-dev/Identifying_Hot_Topic_Trends" target="_blank"
-                title="View Repository"><i class="fa-brands fa-github"></i></a>
+          <!-- Meme Matcher -->
+          <div style="display: none;" class="hidden-project group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">Meme Matcher</h3>
+                <a class="text-black hover:text-accent-orange" href="http://github.com/danishsyed-dev/Meme-Matcher/"
+                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">
+                Real-time CV application that matches facial expressions and hand gestures to memes using MediaPipe's
+                AI.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">OpenCV</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">MediaPipe</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">NLP model to detect and visualize trending topics from real-time text streams using a
-            sequential approach.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">NLP</span>
-            <span class="tech-tag">Data Preprocessing</span>
-          </div>
-        </article>
 
-        <!-- Project: La Liga Analysis -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">La Liga Forwards Analysis</h3>
-            <div class="project-links">
-              <a href="https://github.com/danishsyed-dev/la-liga-forwards-analysis" target="_blank"
-                title="View Repository"><i class="fa-brands fa-github"></i></a>
-              <a href="http://syeddanishali.me/la-liga-forwards-analysis" target="_blank" title="View Live"><i
-                  class="fa-solid fa-external-link"></i></a>
+          <!-- Fine-Tune SLM -->
+          <div style="display: none;" class="hidden-project group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-2xl font-black">Fine-Tune SLM (Gemma 3)</h3>
+                <div class="flex gap-2">
+                  <a class="text-black hover:text-accent-orange"
+                    href="http://github.com/danishsyed-dev/NVIDIA-DGX-Spark-hugging_face_llm_full_fine_tune_tutorial-VIDEO/"
+                    target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+                  <a class="text-black hover:text-accent-orange"
+                    href="https://huggingface.co/spaces/danishali11903/FoodExtract-v1" target="_blank"><span
+                      class="material-symbols-outlined text-3xl">open_in_new</span></a>
+                </div>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">
+                Supervised Fine-Tuning of a Small Language Model to extract food and drink items from text safely.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Transformers</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">gradio</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">trl</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">Statistical analysis of La Liga's greatest forwards with visualizations including bar
-            charts and radar diagrams.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">Matplotlib</span>
-            <span class="tech-tag">Data Viz</span>
-          </div>
-        </article>
 
-        <!-- Project: Life RPG -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Life RPG — Gamified Habit Tracker</h3>
-            <div class="project-links">
-              <a href="https://github.com/danishsyed-dev/Life-RPG" target="_blank" title="View Repository"><i
-                  class="fa-brands fa-github"></i></a>
-              <a href="http://syeddanishali.me/Life-RPG/" target="_blank" title="Play Live"><i
-                  class="fa-solid fa-external-link"></i></a>
+          <!-- ML Models Cancer Prediction -->
+          <div style="display: none;" class="hidden-project group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">Cancer Prediction Models</h3>
+                <a class="text-black hover:text-accent-orange"
+                  href="https://ijitce.org/index.php/ijitce/article/view/1161" target="_blank"><span
+                    class="material-symbols-outlined text-3xl">article</span></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">
+                Built and evaluated ML models using patient records to predict lung cancer outcomes. Published in
+                academic journal.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">RFC</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">KNN</span>
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">SVM</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">Browser-based Life RPG that gamifies daily habits with quests, XP, levels, streaks,
-            and achievements.</p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">LocalStorage</span>
-          </div>
-        </article>
 
-        <!-- Project: Weather App -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Weather Forecast Web App</h3>
-            <div class="project-links">
-              <a href="https://github.com/danishsyed-dev/Weather-scraper" target="_blank" title="View Repository"><i
-                  class="fa-brands fa-github"></i></a>
-              <a href="http://syeddanishali.me/Weather-scraper/" target="_blank" title="View Website"><i
-                  class="fa-solid fa-external-link"></i></a>
+          <!-- Remaining smaller projects -->
+          <div style="display: none;" class="hidden-project group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">Premier League 2025 ML</h3>
+                <a class="text-black hover:text-accent-orange"
+                  href="https://github.com/danishsyed-dev/PL25_Prediction_ML" target="_blank"><i
+                    class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">Predicts outcomes of Premier League matches using
+                historical data.</p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                <span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Scikit-Learn</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">Responsive weather forecasting web app using OpenWeather API with PHP backend.</p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">API</span>
-          </div>
-        </article>
-
-        <!-- Project: Smart Highway -->
-        <article class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Smart Highway Light System</h3>
-            <div class="project-links">
-              <a href="assets/documents/(FINAL)SMART HIGHWAY LIGHT WITH MOVEMENT DETECTOR USING ARDUINO.pdf"
-                target="_blank" title="View Documentation"><i class="fa-solid fa-file-pdf"></i></a>
-              <a href="https://github.com/danishsyed-dev/SMART-HIGHWAY-LIGHTS-WITH-AUTO-CONTROL-SYSTEM" target="_blank"
-                title="View Repository"><i class="fa-brands fa-github"></i></a>
+          <div style="display: none;" class="hidden-project group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">Streaming Trend Analysis</h3>
+                <a class="text-black hover:text-accent-orange"
+                  href="https://github.com/danishsyed-dev/Identifying_Hot_Topic_Trends" target="_blank"><i
+                    class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">NLP model to detect/visualize trending topics
+                from real-time text streams.</p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto"><span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">NLP</span>
+              </div>
             </div>
           </div>
-          <p class="project-desc">IoT-enabled Arduino system that controls street lights using IR and LDR sensors with
-            real-time logic.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Arduino</span>
-            <span class="tech-tag">IR Sensors</span>
-            <span class="tech-tag">LDR</span>
-            <span class="tech-tag">IoT</span>
-          </div>
-        </article>
-
-      </div>
-      <div class="projects-cta">
-        <button class="projects-btn" id="toggleProjects">
-          <i class="fa-solid fa-folder-open"></i>
-          <span>View All Projects</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-      </div>
-    </section>
-
-    <!-- ================================
-         BLOG SECTION
-         ================================ -->
-    <section id="blog" class="section fade-in">
-      <div class="section-header">
-        <i class="fa-solid fa-newspaper section-icon"></i>
-        <h2>Blogs</h2>
-      </div>
-      <div class="blog-list">
-        <!-- Blog: RelayContext -->
-        <article class="blog-item">
-          <div class="blog-header">
-            <h3 class="blog-title">RelayContext: A CLI Tool for AI Coding Context Persistence</h3>
-            <div class="blog-links">
-              <a href="https://syeddanishali.me/my-blog/blog/relaycontext-a-cli-tool-for-ai-coding-context-persistence/"
-                target="_blank" title="Read Article"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div style="display: none;" class="hidden-project group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">La Liga Forwards Analysis</h3>
+                <a class="text-black hover:text-accent-orange"
+                  href="https://github.com/danishsyed-dev/la-liga-forwards-analysis" target="_blank"><i
+                    class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">Statistical analysis with bar charts and radar
+                diagrams.</p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto"><span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Data
+                  Viz</span></div>
             </div>
           </div>
-          <p class="blog-desc">
-            A practical guide to building RelayContext, a Node.js CLI tool that captures and persists structured AI
-            coding context - reasoning, decisions, and task state - alongside Git branches. Learn how it enables
-            seamless
-            continuation of AI-assisted development across sessions, IDEs, and devices without re-explaining project
-            architecture or progress.
-          </p>
-          <div class="blog-tech">
-            <span class="blog-tag">Node.js</span>
-            <span class="blog-tag">CLI Development</span>
-            <span class="blog-tag">Git Integration</span>
-            <span class="blog-tag">Developer Productivity</span>
-          </div>
-        </article>
-
-        <!-- Blog: InComeIQ -->
-        <article class="blog-item">
-          <div class="blog-header">
-            <h3 class="blog-title">Building a Production-Ready ML Pipeline: The ML Income Predictor</h3>
-            <div class="blog-links">
-              <a href="https://syeddanishali.me/my-blog/blog/ml-income-predictor/" target="_blank"
-                title="Read Article"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div style="display: none;" class="hidden-project group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">Life RPG Tracker</h3>
+                <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/Life-RPG"
+                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">Gamifies daily habits with quests, XP, streaks.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto"><span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">JS</span>
+              </div>
             </div>
           </div>
-          <p class="blog-desc">A deep dive into transitioning from a basic Jupyter Notebook to a fully object-oriented,
-            production-ready Machine Learning pipeline and web application for demographic income classification.</p>
-          <div class="blog-tags">
-            <span class="blog-tag">Machine Learning</span>
-            <span class="blog-tag">XGBoost</span>
-            <span class="blog-tag">Python</span>
-            <span class="blog-tag">Flask</span>
-            <span class="blog-tag">Data Engineering</span>
-            <span class="blog-tag">Sklearn</span>
-          </div>
-        </article>
-
-        <!-- Blog: Housing Price Prediction System -->
-        <article class="blog-item">
-          <div class="blog-header">
-            <h3 class="blog-title">How I Built a Dynamic Pricing ML System</h3>
-            <div class="blog-links">
-              <a href="https://syeddanishali.me/my-blog/blog/dynamic-pricing-ml-system/" target="_blank"
-                title="Read Article"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div style="display: none;" class="hidden-project group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">Weather Forecast App</h3>
+                <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/Weather-scraper"
+                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">Responsive forecasting app using OpenWeather API
+                with PHP.</p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto"><span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">PHP</span>
+              </div>
             </div>
           </div>
-          <p class="blog-desc">An End-to-End Machine Learning pipeline for price prediction, built using ZenML and
-            MLflow.</p>
-          <div class="blog-tags">
-            <span class="blog-tag">Python</span>
-            <span class="blog-tag">Pandas</span>
-            <span class="blog-tag">scikit-learn</span>
-            <span class="blog-tag">ZenML</span>
-            <span class="blog-tag">MLflow</span>
-            <span class="blog-tag">pytest</span>
-            <span class="blog-tag">Seaborn</span>
-            <span class="blog-tag">Matplotlib</span>
-          </div>
-        </article>
-
-        <!-- Blog: Food Extractor -->
-        <article class="blog-item">
-          <div class="blog-header">
-            <h3 class="blog-title">Food Extractor: Extracting Food from Images</h3>
-            <div class="blog-links">
-              <a href="https://syeddanishali.me/my-blog/blog/food-extractor/" target="_blank" title="Read Article"><i
-                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div style="display: none;" class="hidden-project group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline text-3xl font-black">Smart Highway Light</h3>
+                <a class="text-black hover:text-accent-orange"
+                  href="https://github.com/danishsyed-dev/SMART-HIGHWAY-LIGHTS-WITH-AUTO-CONTROL-SYSTEM"
+                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+              </div>
+              <p class="text-sm font-bold mb-8 leading-relaxed italic">IoT Arduino system controlling street lights via
+                IR and LDR sensors.</p>
+              <div class="flex flex-wrap gap-2 mb-8 mt-auto"><span
+                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Arduino
+                  / IoT</span></div>
             </div>
           </div>
-          <p class="blog-desc">A deep dive into building a production-ready Retrieval-Augmented Generation system,
-            using Hugging Face and FastAPI.</p>
-          <div class="blog-tags">
-            <span class="blog-tag">Hugging Face</span>
-            <span class="blog-tag">FastAPI</span>
-            <span class="blog-tag">Python</span>
-            <span class="blog-tag">Machine Learning</span>
-          </div>
-        </article>
 
-        <!-- Blog: RAG System -->
-        <article class="blog-item">
-          <div class="blog-header">
-            <h3 class="blog-title">How I Built a RAG System with FastAPI</h3>
-            <div class="blog-links">
-              <a href="https://syeddanishali.me/my-blog/blog/building-rag-system-fastapi/" target="_blank"
-                title="Read Article"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        
+        <div class="mt-16 text-center" id="viewAllProjectsContainer">
+            <button id="toggleProjectsBtn" class="inline-block bg-black text-white px-8 py-4 border-2 border-black font-headline font-black text-sm uppercase shadow-[6px_6px_0px_0px_rgba(230,126,34,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer">
+              VIEW ALL PROJECTS
+            </button>
+        
+      </section>
+
+      <!-- Blog Section -->
+      <section class="bg-parchment py-24 border-y-4 border-black" id="blog">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex items-center gap-4 mb-16">
+            <div class="flex-grow h-4 bg-black"></div>
+            <h2 class="font-headline text-5xl font-black text-right whitespace-nowrap uppercase">Journal_Entry</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Blog Card 1 -->
+            <a href="https://syeddanishali.me/my-blog/blog/relaycontext-a-cli-tool-for-ai-coding-context-persistence/"
+              target="_blank"
+              class="p-8 border-4 border-black bg-white hover:bg-accent-yellow transition-colors group cursor-pointer shadow-hard relative block">
+              <div class="absolute -top-3 -right-3 w-8 h-8 bg-black border-2 border-white rotate-45"></div>
+              <h4 class="font-headline text-2xl font-black mb-4 leading-tight group-hover:underline underline-offset-4">
+                RelayContext: A CLI Tool for AI Coding Context Persistence</h4>
+              <p class="text-sm font-bold mb-6 leading-relaxed text-black">A practical guide to building RelayContext,
+                capturing AI context along Git branches...</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-[10px] font-mono font-black border-2 border-black px-2">#Node.js</span>
+                <span class="text-[10px] font-mono font-black border-2 border-black px-2">#CLI</span>
+              </div>
+            </a>
+
+            <!-- Blog Card 2 -->
+            <a href="https://syeddanishali.me/my-blog/blog/ml-income-predictor/" target="_blank"
+              class="p-8 border-4 border-black bg-white hover:bg-accent-green transition-colors group cursor-pointer shadow-hard relative block">
+              <div class="absolute -top-3 -right-3 w-8 h-8 bg-black border-2 border-white rotate-45"></div>
+              <h4 class="font-headline text-2xl font-black mb-4 leading-tight group-hover:underline underline-offset-4">
+                Building a Production-Ready ML Pipeline</h4>
+              <p class="text-sm font-bold mb-6 leading-relaxed text-black">A deep dive into transitioning from a basic
+                Jupyter Notebook to fully object-oriented...</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-[10px] font-mono font-black border-2 border-black px-2">#ML</span>
+                <span class="text-[10px] font-mono font-black border-2 border-black px-2">#Python</span>
+              </div>
+            </a>
+
+            <!-- Blog Card 3 -->
+            <a href="https://syeddanishali.me/my-blog/blog/dynamic-pricing-ml-system/" target="_blank"
+              class="p-8 border-4 border-black bg-white hover:bg-accent-orange transition-colors group cursor-pointer shadow-hard relative block">
+              <div class="absolute -top-3 -right-3 w-8 h-8 bg-black border-2 border-white rotate-45"></div>
+              <h4
+                class="font-headline text-2xl font-black mb-4 leading-tight hover:text-white group-hover:underline underline-offset-4">
+                How I Built a Dynamic Pricing ML System</h4>
+              <p class="text-sm font-bold mb-6 leading-relaxed hover:text-white">An End-to-End Machine Learning pipeline
+                for price prediction, built using ZenML and MLflow...</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="text-[10px] font-mono font-black border-2 border-black px-2 hover:border-white hover:text-white">#ZenML</span>
+                <span
+                  class="text-[10px] font-mono font-black border-2 border-black px-2 hover:border-white hover:text-white">#MLflow</span>
+              </div>
+            </a>
+
+            <!-- Blog Card 4 -->
+            <a href="https://syeddanishali.me/my-blog/blog/food-extractor/" target="_blank"
+              class="p-8 border-4 border-black bg-white hover:bg-accent-yellow transition-colors group cursor-pointer shadow-hard relative block">
+              <div class="absolute -top-3 -right-3 w-8 h-8 bg-black border-2 border-white rotate-45"></div>
+              <h4 class="font-headline text-2xl font-black mb-4 leading-tight group-hover:underline underline-offset-4">
+                Food Extractor: Extracting Food from Images</h4>
+              <p class="text-sm font-bold mb-6 leading-relaxed text-black">Deep dive into a production-ready RAG system
+                via Hugging Face and FastAPI...</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-[10px] font-mono font-black border-2 border-black px-2">#Hugging Face</span>
+              </div>
+            </a>
+
+            <!-- Blog Card 5 -->
+            <a href="https://syeddanishali.me/my-blog/blog/building-rag-system-fastapi/" target="_blank"
+              class="p-8 border-4 border-black bg-white hover:bg-accent-green transition-colors group cursor-pointer shadow-hard relative block">
+              <div class="absolute -top-3 -right-3 w-8 h-8 bg-black border-2 border-white rotate-45"></div>
+              <h4 class="font-headline text-2xl font-black mb-4 leading-tight group-hover:underline underline-offset-4">
+                How I Built a RAG System with FastAPI</h4>
+              <p class="text-sm font-bold mb-6 leading-relaxed text-black">Covering architecture decisions, chunking
+                strategies, and performance optimization...</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-[10px] font-mono font-black border-2 border-black px-2">#FastAPI</span>
+                <span class="text-[10px] font-mono font-black border-2 border-black px-2">#RAG</span>
+              </div>
+            </a>
+
+            <!-- Blog Card 6 -->
+            <a href="https://syeddanishali.me/my-blog/blog/comparing-ml-models-cancer-prediction/" target="_blank"
+              class="p-8 border-4 border-black bg-white hover:bg-accent-orange transition-colors group cursor-pointer shadow-hard relative block">
+              <div class="absolute -top-3 -right-3 w-8 h-8 bg-black border-2 border-white rotate-45"></div>
+              <h4
+                class="font-headline text-2xl font-black mb-4 leading-tight hover:text-white group-hover:underline underline-offset-4">
+                Comparing ML Models for Cancer Prediction</h4>
+              <p class="text-sm font-bold mb-6 leading-relaxed hover:text-white">A comprehensive analysis of machine
+                learning algorithms for predicting lung cancer outcomes...</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="text-[10px] font-mono font-black border-2 border-black px-2 hover:border-white hover:text-white">#ML</span>
+                <span
+                  class="text-[10px] font-mono font-black border-2 border-black px-2 hover:border-white hover:text-white">#Healthcare</span>
+              </div>
+            </a>
+
+          </div>
+          <div class="mt-8 text-center">
+            <a href="https://syeddanishali.me/my-blog/" target="_blank"
+              class="inline-block bg-black text-white px-8 py-4 border-2 border-black font-headline font-black text-sm uppercase shadow-[6px_6px_0px_0px_rgba(230,126,34,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+              VIEW ALL POSTS
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume & Contact -->
+      <section class="max-w-7xl mx-auto px-6 py-24" id="contact">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="p-12 border-4 border-black bg-accent-yellow shadow-hard-lg">
+            <h2 class="font-headline text-4xl font-black mb-6 uppercase tracking-tight leading-none">
+              BUILDING_SYSTEMS_v1.0</h2>
+            <p class="text-lg font-bold mb-10 border-l-8 border-black pl-6">I am currently available for full-time
+              opportunities and interesting collaborations in AI and Full-Stack Engineering.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button id="openResumeModalBot"
+                class="bg-black text-white px-8 py-4 border-2 border-black font-headline font-black text-sm uppercase shadow-[6px_6px_0px_0px_rgba(230,126,34,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined">description</span> VIEW_RESUME
+              </button>
+              <a href="mailto:knightdanish@outlook.com"
+                class="bg-white text-black px-8 py-4 border-4 border-black font-headline font-black text-sm uppercase shadow-hard hover:bg-parchment-dark transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined">mail</span> SEND_ENQUIRY
+              </a>
             </div>
           </div>
-          <p class="blog-desc">A deep dive into building a production-ready Retrieval-Augmented Generation system,
-            covering architecture decisions, chunking strategies, and performance optimization.</p>
-          <div class="blog-tags">
-            <span class="blog-tag">RAG</span>
-            <span class="blog-tag">FastAPI</span>
-            <span class="blog-tag">NLP</span>
-            <span class="blog-tag">LLMs</span>
+          <div class="grid grid-cols-2 gap-6">
+            <a href="mailto:knightdanish@outlook.com"
+              class="p-6 border-4 border-black bg-white shadow-hard flex flex-col items-center text-center group hover:bg-accent-orange transition-colors">
+              <span
+                class="material-symbols-outlined text-4xl text-black mb-4 group-hover:scale-110 transition-transform">mail</span>
+              <h4 class="font-headline font-black uppercase text-sm mb-1">Email</h4>
+              <p class="text-[10px] font-mono font-bold">knightdanish@outlook.com</p>
+            </a>
+            <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank"
+              class="p-6 border-4 border-black bg-white shadow-hard flex flex-col items-center text-center group hover:bg-accent-green transition-colors">
+              <span
+                class="material-symbols-outlined text-4xl text-black mb-4 group-hover:scale-110 transition-transform">work</span>
+              <h4 class="font-headline font-black uppercase text-sm mb-1">LinkedIn</h4>
+              <p class="text-[10px] font-mono font-bold">/in/syed-danish-ali</p>
+            </a>
+            <a href="https://github.com/danishsyed-dev" target="_blank"
+              class="p-6 border-4 border-black bg-white shadow-hard flex flex-col items-center text-center group hover:bg-accent-yellow transition-colors">
+              <i class="fa-brands fa-github text-4xl text-black mb-4 group-hover:scale-110 transition-transform"></i>
+              <h4 class="font-headline font-black uppercase text-sm mb-1">GitHub</h4>
+              <p class="text-[10px] font-mono font-bold">github.com/danishsyed-dev</p>
+            </a>
+            <a href="https://www.researchgate.net/profile/Syed-Danish-Ali" target="_blank"
+              class="p-6 border-4 border-black bg-white shadow-hard flex flex-col items-center text-center group hover:bg-black group-hover:!text-white transition-colors">
+              <span
+                class="material-symbols-outlined text-4xl text-black mb-4 group-hover:!text-white group-hover:scale-110 transition-transform">science</span>
+              <h4 class="font-headline font-black uppercase text-sm mb-1 group-hover:!text-white">ResearchGate</h4>
+            </a>
           </div>
-        </article>
+        </div>
+      </section>
+    </main>
 
-        <!-- Blog: Cancer Prediction -->
-        <article class="blog-item">
-          <div class="blog-header">
-            <h3 class="blog-title">Comparing ML Models for Cancer Prediction</h3>
-            <div class="blog-links">
-              <a href="https://syeddanishali.me/my-blog/blog/comparing-ml-models-cancer-prediction/" target="_blank"
-                title="Read Article"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <p class="blog-desc">A comprehensive analysis of machine learning algorithms for cancer prediction, examining
-            accuracy, interpretability, and clinical applicability.</p>
-          <div class="blog-tags">
-            <span class="blog-tag">Machine Learning</span>
-            <span class="blog-tag">Healthcare</span>
-            <span class="blog-tag">XGBoost</span>
-            <span class="blog-tag">SHAP</span>
-          </div>
-        </article>
-
-      </div>
-      <div class="blog-cta">
-        <a href="https://syeddanishali.me/my-blog/" target="_blank" class="blog-btn">
-          <i class="fa-solid fa-newspaper"></i> View All Posts <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================================
-         RESUME SECTION
-         ================================ -->
-    <section id="resume" class="section fade-in">
-      <div class="section-header">
-        <i class="fa-solid fa-file-alt section-icon"></i>
-        <h2>Resume</h2>
-      </div>
-      <div class="resume-box">
-        <p class="resume-text">Looking for a detailed overview? Preview and download my resume.</p>
-        <button class="resume-btn" id="openResumeModal">
-          <i class="fa-solid fa-eye"></i> View Resume
-        </button>
-      </div>
-    </section>
-
-    <!-- ================================
-         CONTACT SECTION
-         ================================ -->
-    <section id="contact" class="section fade-in">
-      <div class="section-header">
-        <i class="fa-solid fa-paper-plane section-icon"></i>
-        <h2>Get In Touch</h2>
-      </div>
-      <div class="contact-grid">
-        <a href="mailto:knightdanish@gmail.com" class="contact-item email">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Email me</span>
-        </a>
-        <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank" class="contact-item linkedin">
-          <i class="fa-brands fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://github.com/danishsyed-dev" target="_blank" class="contact-item github">
-          <i class="fa-brands fa-github"></i>
-          <span>GitHub</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================================
-         FOOTER
-         ================================ -->
-    <footer class="footer">
-      <p>&copy; 2026 Syed Danish Ali.</p>
-      <div class="footer-status">
-        <span class="status-dot"></span>
-        <span>Available for opportunities</span>
+    <!-- Footer -->
+    <footer class="bg-parchment-dark border-t-8 border-black">
+      <div class="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-4 border-2 border-black bg-white p-3 shadow-hard">
+          <div class="w-4 h-4 bg-accent-green border-2 border-black animate-pulse"></div>
+          <p class="font-mono text-xs font-black uppercase">STATUS: AVAILABLE_FOR_HIRE</p>
+        </div>
+        <p class="font-headline font-black text-sm uppercase tracking-tighter">
+          ©2026 SYED DANISH ALI
+        </p>
+        <div class="flex gap-8">
+          <a class="font-headline font-black text-xs uppercase hover:text-accent-orange underline decoration-2 decoration-black transition-colors"
+            href="https://github.com/danishsyed-dev">GITHUB</a>
+          <a class="font-headline font-black text-xs uppercase hover:text-accent-orange underline decoration-2 decoration-black transition-colors"
+            href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/">LINKEDIN</a>
+        </div>
       </div>
     </footer>
-
   </div>
 
-  <!-- ================================
-       RESUME MODAL
-       ================================ -->
+  <!-- Resume Modal Container (Used by js/main.js) -->
   <div class="modal-overlay" id="resumeModal">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div class="modal-title">
-          <i class="fa-solid fa-file-pdf"></i>
-          <span>Syed_Danish_Ali_Resume.pdf</span>
+    <div class="p-4"
+      style="width: 90%; max-width: 800px; background: white; border: 4px solid black; box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);">
+      <div class="flex justify-between items-center mb-4 pb-2 border-b-4 border-black">
+        <div class="flex items-center gap-2 font-headline font-black uppercase">
+          <i class="fa-solid fa-file-pdf"></i> Syed_Danish_Ali_Resume.pdf
         </div>
-        <div class="modal-actions">
+        <div class="flex gap-2">
           <a href="assets/documents/Syed_Danish_Ali_Unstop_Feb2025_Resume.pdf" download="Syed Danish Ali Resume.pdf"
-            class="modal-btn download">
+            class="bg-accent-yellow px-4 py-2 border-2 border-black font-black uppercase text-sm">
             <i class="fa-solid fa-download"></i> Download
           </a>
-          <button class="modal-btn close" id="closeResumeModal">
+          <button
+            class="bg-black text-white px-4 py-2 border-2 border-black font-black uppercase text-sm hover:bg-accent-orange transition-colors"
+            id="closeResumeModal">
             <i class="fa-solid fa-times"></i> Close
           </button>
         </div>
       </div>
-      <div class="modal-body">
+      <div style="height: 70vh;">
         <object data="assets/documents/Syed_Danish_Ali_Unstop_Feb2025_Resume.pdf" type="application/pdf" width="100%"
           height="100%">
-          <div class="pdf-fallback">
-            <i class="fa-solid fa-file-pdf"></i>
-            <h3>PDF Preview Unavailable</h3>
-            <p>Your browser cannot display PDFs inline when viewing locally. Please use one of the options below:</p>
-            <div class="fallback-actions">
-              <a href="assets/documents/Syed_Danish_Ali_Unstop_Feb2025_Resume.pdf" target="_blank"
-                class="modal-btn download">
-                <i class="fa-solid fa-external-link"></i> Open in New Tab
-              </a>
-              <a href="assets/documents/Syed_Danish_Ali_Unstop_Feb2025_Resume.pdf" download="Syed Danish Ali Resume.pdf"
-                class="modal-btn download">
-                <i class="fa-solid fa-download"></i> Download PDF
-              </a>
-            </div>
+          <div class="text-center p-8">
+            <i class="fa-solid fa-file-pdf text-4xl mb-4"></i>
+            <h3 class="font-headline font-black text-2xl uppercase mb-2">PDF Preview Unavailable</h3>
+            <p>Your browser cannot display PDFs inline when viewing locally.</p>
           </div>
         </object>
       </div>
@@ -760,7 +814,19 @@
 
   <!-- Custom JavaScript -->
   <script src="js/main.js"></script>
-
+  <!-- Minor hook to make the second resume button trigger modal -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const openModalBtn = document.getElementById("openResumeModalBot");
+      const modal = document.getElementById("resumeModal");
+      if (openModalBtn && modal) {
+        openModalBtn.addEventListener("click", () => {
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
