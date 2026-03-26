@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initResumeModal();
     initProjectsToggle();
+    initMobileMenu();
 });
 
 /* ============================================
@@ -126,10 +127,49 @@ function initProjectsToggle() {
         hiddenProjects.forEach(proj => {
             proj.style.display = 'flex';
         });
-        
+
         // Hide the view all button now that everything is visible
-        if(btnContainer) {
+        if (btnContainer) {
             btnContainer.style.display = 'none';
         }
     });
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+function initMobileMenu() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const menuIcon = document.getElementById('mobileMenuIcon');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    const resumeBtnMobile = document.getElementById('openResumeModalMobile');
+    const resumeModal = document.getElementById('resumeModal');
+
+    if (!menuBtn || !mobileMenu) return;
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.textContent = 'menu';
+        } else {
+            menuIcon.textContent = 'close';
+        }
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+        });
+    });
+
+    if (resumeBtnMobile && resumeModal) {
+        resumeBtnMobile.addEventListener('click', () => {
+            openModal(resumeModal);
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+        });
+    }
 }

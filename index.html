@@ -64,9 +64,27 @@
             RESUME
           </button>
         </div>
-        <button class="md:hidden text-black">
-          <span class="material-symbols-outlined font-black">menu</span>
+        <button id="mobileMenuBtn" class="md:hidden text-black z-50 focus:outline-none">
+          <span id="mobileMenuIcon" class="material-symbols-outlined font-black text-4xl">menu</span>
         </button>
+      </div>
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobileMenu"
+        class="hidden absolute top-full left-0 w-full bg-[#f8f7ee] border-b-4 border-black flex flex-col font-headline font-bold text-xl tracking-tighter divide-y-4 divide-black shadow-hard z-10">
+        <a class="mobile-nav-link text-black hover:bg-accent-yellow p-6 text-center transition-colors"
+          href="#education">EDUCATION</a>
+        <a class="mobile-nav-link text-black hover:bg-accent-green p-6 text-center transition-colors"
+          href="#skills">SKILLS</a>
+        <a class="mobile-nav-link text-black hover:bg-accent-orange p-6 text-center transition-colors"
+          href="#projects">PROJECTS</a>
+        <a class="mobile-nav-link text-black hover:bg-accent-yellow p-6 text-center transition-colors"
+          href="#blog">BLOG</a>
+        <div class="p-6 flex justify-center">
+          <button id="openResumeModalMobile"
+            class="bg-accent-yellow px-8 py-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all w-full uppercase">
+            Resume
+          </button>
+        </div>
       </div>
     </nav>
 
@@ -114,11 +132,11 @@
               href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank">
               <span class="material-symbols-outlined text-lg">work</span> linkedin
             </a>
-            <a class="flex items-center justify-center gap-2 py-4 border-2 border-black bg-white font-headline font-bold text-xs uppercase hover:bg-parchment-dark transition-colors shadow-hard col-span-2 md:col-span-1"
+            <a class="flex items-center justify-center gap-2 py-4 border-2 border-black bg-white font-headline font-bold text-xs uppercase hover:bg-parchment-dark transition-colors shadow-hard"
               href="https://www.researchgate.net/profile/Syed-Danish-Ali?ev=hdr_xprf" target="_blank">
-              <i class="fa-brands fa-researchgate text-lg"></i> r-gate
+              <i class="fa-brands fa-researchgate text-lg"></i> researchgate
             </a>
-            <a class="flex items-center justify-center gap-2 py-4 border-2 border-black bg-white font-headline font-bold text-xs uppercase hover:bg-parchment-dark transition-colors shadow-hard col-span-2 md:col-span-1 xl:col-span-1"
+            <a class="flex items-center justify-center gap-2 py-4 border-2 border-black bg-white font-headline font-bold text-xs uppercase hover:bg-parchment-dark transition-colors shadow-hard"
               href="https://orcid.org/0009-0000-3010-0027" target="_blank">
               <i class="fa-brands fa-orcid text-lg"></i> orcid
             </a>
@@ -133,7 +151,7 @@
 
             <img
               class="relative block bottom-0 left-1/2 -translate-x-1/2 w-[115%] sm:w-[125%] max-w-none h-auto z-10 drop-shadow-[8px_8px_0_rgba(0,0,0,1)] hover:scale-105 transition-all duration-500 origin-bottom"
-              style="clip-path: inset(0 0 4px 0);" src="assets/images/avatar.png" alt="Profile Avatar" />
+              style="clip-path: inset(0 0 4px 0);" src="assets/images/avatar_removebg.png" alt="Profile Avatar" />
           </div>
         </div>
 
@@ -142,7 +160,7 @@
       <!-- Education Section -->
       <section class="max-w-7xl mx-auto px-6 py-24" id="education">
         <div class="border-b-8 border-black mb-16">
-          <h2 class="font-headline text-5xl font-black mb-4">EDUCATION.LOG</h2>
+          <h2 class="font-headline text-4xl sm:text-5xl font-black mb-4 break-words">EDUCATION.LOG</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <!-- Degree 1 -->
@@ -240,6 +258,17 @@
                 <p class="font-mono text-xs font-bold leading-relaxed">Data Analysis, Power BI, Tableau, Firebase.</p>
               </div>
             </div>
+            <!-- Tools -->
+            <div class="relative">
+              <div
+                class="absolute -top-6 left-0 h-6 w-32 bg-accent-green border-t-4 border-x-4 border-black folder-tab">
+              </div>
+              <div class="p-8 border-4 border-black bg-white shadow-hard h-full">
+                <span class="material-symbols-outlined text-4xl text-black mb-4 block">terminal</span>
+                <h3 class="font-headline text-xl font-black mb-2">TOOLS & PLATFORMS</h3>
+                <p class="font-mono text-xs font-bold">Git & GitHub, API Integration.</p>
+              </div>
+            </div>
             <!-- Embedded & IoT -->
             <div class="md:col-span-2 relative">
               <div
@@ -258,15 +287,6 @@
                 </div>
               </div>
             </div>
-            <!-- Tools -->
-            <div class="relative">
-              <div class="absolute -top-6 left-0 h-6 w-32 bg-black border-t-4 border-x-4 border-black folder-tab"></div>
-              <div class="p-8 border-4 border-black bg-white shadow-hard h-full">
-                <span class="material-symbols-outlined text-4xl text-black mb-4 block">terminal</span>
-                <h3 class="font-headline text-xl font-black mb-2">TOOLS & PLATFORMS</h3>
-                <p class="font-mono text-xs font-bold">Git & GitHub, API Integration.</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -275,7 +295,8 @@
       <section class="max-w-7xl mx-auto px-6 py-24" id="projects">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
           <div>
-            <h2 class="font-headline text-6xl font-black tracking-tighter">PROJECT_REPO</h2>
+            <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter break-words">
+              PROJECT_REPO</h2>
             <div class="h-2 w-48 bg-accent-green mt-2"></div>
           </div>
         </div>
@@ -623,7 +644,9 @@
         <div class="max-w-7xl mx-auto px-6">
           <div class="flex items-center gap-4 mb-16">
             <div class="flex-grow h-4 bg-black"></div>
-            <h2 class="font-headline text-5xl font-black text-right whitespace-nowrap uppercase">Journal_Entry</h2>
+            <h2
+              class="font-headline text-4xl sm:text-5xl font-black text-right whitespace-nowrap uppercase break-words">
+              Blog_Posts</h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
@@ -730,9 +753,10 @@
       <!-- Resume & Contact -->
       <section class="max-w-7xl mx-auto px-6 py-24" id="contact">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div class="p-12 border-4 border-black bg-accent-yellow shadow-hard-lg">
-            <h2 class="font-headline text-4xl font-black mb-6 uppercase tracking-tight leading-none">
-              BUILDING_SYSTEMS_v1.0</h2>
+          <div class="p-12 border-4 border-black bg-accent-yellow shadow-hard-lg overflow-hidden">
+            <h2
+              class="font-headline text-3xl sm:text-4xl lg:text-3xl xl:text-4xl font-black mb-6 uppercase tracking-tight leading-none break-words">
+              BUILDING_<wbr>SYSTEMS_<wbr>v1.0</h2>
             <p class="text-lg font-bold mb-10 border-l-8 border-black pl-6">I am currently available for full-time
               opportunities and interesting collaborations in AI and Full-Stack Engineering.</p>
             <div class="flex flex-col sm:flex-row gap-4">
@@ -752,7 +776,7 @@
               <span
                 class="material-symbols-outlined text-4xl text-black mb-4 group-hover:scale-110 transition-transform">mail</span>
               <h4 class="font-headline font-black uppercase text-sm mb-1">Email</h4>
-              <p class="text-[10px] font-mono font-bold">knightdanish@outlook.com</p>
+              <p class="text-[10px] font-mono font-bold">Contact Me</p>
             </a>
             <a href="https://www.linkedin.com/in/syed-danish-ali-70b36334a/" target="_blank"
               class="p-6 border-4 border-black bg-white shadow-hard flex flex-col items-center text-center group hover:bg-accent-green transition-colors">
@@ -772,6 +796,7 @@
               <span
                 class="material-symbols-outlined text-4xl text-black mb-4 group-hover:!text-white group-hover:scale-110 transition-transform">science</span>
               <h4 class="font-headline font-black uppercase text-sm mb-1 group-hover:!text-white">ResearchGate</h4>
+              <p class="text-[10px] font-mono font-bold">Check Out My Research</p>
             </a>
           </div>
         </div>
@@ -832,7 +857,7 @@
   </div>
 
   <!-- Custom JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
   <!-- Minor hook to make the second resume button trigger modal -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
