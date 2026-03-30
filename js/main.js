@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initResumeModal();
     initProjectsToggle();
     initMobileMenu();
+    initProjectReveal();
 });
 
 /* ============================================
@@ -170,6 +171,54 @@ function initMobileMenu() {
             openModal(resumeModal);
             mobileMenu.classList.add('hidden');
             menuIcon.textContent = 'menu';
+        });
+    }
+}
+
+/* ============================================
+   PROJECT SCROLL REVEAL
+   ============================================ */
+
+/**
+ * Staggered scroll-reveal animation for project cards
+ */
+function initProjectReveal() {
+    const cards = document.querySelectorAll('.project-card');
+    if (!cards.length) return;
+
+    let revealIndex = 0;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const card = entry.target;
+                const delay = revealIndex * 120; // stagger each card by 120ms
+                setTimeout(() => {
+                    card.classList.add('revealed');
+                }, delay);
+                revealIndex++;
+                observer.unobserve(card);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    cards.forEach(card => {
+        // Only observe visible cards (not hidden-project ones initially)
+        if (card.style.display !== 'none') {
+            observer.observe(card);
+        }
+    });
+
+    // Re-observe hidden cards when "View All" is clicked
+    const toggleBtn = document.getElementById('toggleProjectsBtn');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            revealIndex = 0;
+            setTimeout(() => {
+                document.querySelectorAll('.project-card:not(.revealed)').forEach(card => {
+                    observer.observe(card);
+                });
+            }, 100);
         });
     }
 }
