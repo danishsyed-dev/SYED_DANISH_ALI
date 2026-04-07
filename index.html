@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="light" lang="en">
 
 <head>
@@ -15,8 +15,8 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta name="description"
-    content="Syed Danish Ali - Software Developer, Data Analyst & ML Engineer. Building AI/ML solutions, data pipelines, and embedded systems." />
-  <title>Syed Danish Ali | Software Developer & ML Engineer</title>
+    content="Syed Danish Ali - Data Scientist, Data Analyst & ML Engineer. Building AI/ML solutions, data pipelines, and embedded systems." />
+  <title>Syed Danish Ali | Data Scientist & ML Engineer</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
@@ -52,15 +52,15 @@
           <span class="text-xl font-black text-black uppercase font-headline">S. DANISH ALI</span>
         </div>
         <div class="hidden md:flex gap-8 items-center font-headline font-bold text-sm tracking-tighter">
-          <a class="text-black hover:text-accent-orange transition-all hover:translate-y-[-1px]"
+          <a class="text-black hover:text-accent-orange transition-colors"
             href="#education">EDUCATION</a>
-          <a class="text-black hover:text-accent-orange transition-all hover:translate-y-[-1px]"
+          <a class="text-black hover:text-accent-orange transition-colors"
             href="#skills">SKILLS</a>
-          <a class="text-black hover:text-accent-orange transition-all hover:translate-y-[-1px]"
+          <a class="text-black hover:text-accent-orange transition-colors"
             href="#projects">PROJECTS</a>
-          <a class="text-black hover:text-accent-orange transition-all hover:translate-y-[-1px]" href="#blog">BLOG</a>
+          <a class="text-black hover:text-accent-orange transition-colors" href="#blog">BLOG</a>
           <button id="openResumeModal"
-            class="bg-accent-yellow px-4 py-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all">
+            class="bg-accent-yellow px-4 py-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-transform btn-press">
             RESUME
           </button>
         </div>
@@ -81,7 +81,7 @@
           href="#blog">BLOG</a>
         <div class="p-6 flex justify-center">
           <button id="openResumeModalMobile"
-            class="bg-accent-yellow px-8 py-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all w-full uppercase">
+            class="bg-accent-yellow px-8 py-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-transform btn-press w-full uppercase">
             Resume
           </button>
         </div>
@@ -150,7 +150,7 @@
             <!-- Decorative Arch Backdrop -->
 
             <img
-              class="relative block bottom-0 left-1/2 -translate-x-1/2 w-[115%] sm:w-[125%] max-w-none h-auto z-10 drop-shadow-[8px_8px_0_rgba(0,0,0,1)] hover:scale-105 transition-all duration-500 origin-bottom"
+              class="relative block bottom-0 left-1/2 -translate-x-1/2 w-[115%] sm:w-[125%] max-w-none h-auto z-10 drop-shadow-[8px_8px_0_rgba(0,0,0,1)] hover:scale-105 transition-transform duration-300 origin-bottom"
               style="clip-path: inset(0 0 4px 0);" src="assets/images/avatar_removebg.png" alt="Profile Avatar" />
           </div>
         </div>
@@ -168,7 +168,7 @@
             <div class="absolute -top-6 left-0 h-6 w-32 bg-accent-orange border-t-4 border-x-4 border-black folder-tab">
             </div>
             <div
-              class="p-8 border-4 border-black bg-white shadow-hard-lg hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all">
+              class="p-8 border-4 border-black bg-white shadow-hard-lg edu-card">
               <span class="text-xs font-mono font-bold text-accent-orange mb-2 block uppercase">2022 — 2025</span>
               <h3 class="text-2xl font-black font-headline mb-2">B.E. in Computer Science Engineering (AI & ML)</h3>
               <p class="font-bold text-lg mb-4 underline decoration-accent-green decoration-4">Lords Institute of
@@ -181,7 +181,7 @@
             <div class="absolute -top-6 left-0 h-6 w-32 bg-accent-yellow border-t-4 border-x-4 border-black folder-tab">
             </div>
             <div
-              class="p-8 border-4 border-black bg-white shadow-hard-lg hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all">
+              class="p-8 border-4 border-black bg-white shadow-hard-lg edu-card">
               <span class="text-xs font-mono font-bold text-accent-yellow mb-2 block uppercase">2019 — 2022</span>
               <h3 class="text-2xl font-black font-headline mb-2">Diploma in Electronics and Communication Engineering
               </h3>
@@ -304,459 +304,406 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12" id="projectsContainer">
+        <!-- Carousel -->
+        <div class="carousel-viewport" id="carouselViewport">
+          <div class="carousel-track" id="carouselTrack">
 
-          <!-- RelayContext -->
-          <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:0">
-            <div class="accent-strip bg-accent-yellow"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">🔗</span>
-                <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/RelayContext"
-                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-yellow/30 mb-3 self-start font-mono">🔧 Developer Tool</span>
-              <h3 class="font-headline text-3xl font-black">RelayContext</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Remembers what you were working on — so AI coding
-                assistants don't forget between sessions.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">
-                Node.js CLI tool that captures structured AI coding context alongside Git branches for seamless
-                cross-session continuation.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Node.js</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">NPM
-                  Module</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">CLI</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Git</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- InComeIQ -->
-          <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:1">
-            <div class="accent-strip bg-accent-green"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">💰</span>
-                <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/InComeIQ"
-                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-green/30 mb-3 self-start font-mono">🤖 Machine Learning</span>
-              <h3 class="font-headline text-3xl font-black">InComeIQ</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Predicts whether someone likely earns above or below
-                a threshold — based on demographic data.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">
-                Production-ready ML pipeline and web app for demographic income classification with REST APIs and
-                feature explainability.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Scikit-Learn</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">XGBoost</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Flask</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Docker</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Housing Price Prediction -->
-          <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:2">
-            <div class="accent-strip bg-accent-orange"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">🏠</span>
-                <a class="text-black hover:text-accent-orange"
-                  href="http://github.com/danishsyed-dev/Housing-Price-Prediction-System/" target="_blank"><i
-                    class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-orange/30 mb-3 self-start font-mono">🤖 Machine Learning</span>
-              <h3 class="font-headline text-3xl font-black">Housing Price Predictor</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Estimates how much a house is worth using historical
-                sales data and smart algorithms.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">
-                End-to-End ML pipeline for price prediction, built using ZenML and MLflow.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">ZenML</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">MLflow</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Silver Price Prediction -->
-          <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:3">
-            <div class="accent-strip bg-accent-green"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">🥈</span>
-                <div class="flex gap-2">
-                  <a class="text-black hover:text-accent-orange"
-                    href="http://github.com/danishsyed-dev/Silver-Price-Prediction/" target="_blank"><i
-                      class="fa-brands fa-github text-3xl"></i></a>
-                  <a class="text-black hover:text-accent-orange"
-                    href="https://danishali11903-silver-price-prediction.hf.space/" target="_blank"><span
-                      class="material-symbols-outlined text-3xl">open_in_new</span></a>
-                </div>
-              </div>
-              <span class="category-badge bg-accent-green/30 mb-3 self-start font-mono">📊 Forecasting</span>
-              <h3 class="font-headline text-3xl font-black">Silver Price Predictor</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Forecasts future silver prices in the Indian market —
-                so investors can plan ahead.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">
-                End-to-end machine learning project to predict silver prices for the Indian market.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">scikit-learn</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Flask</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- RAG API -->
-          <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:4">
-            <div class="accent-strip bg-[#c4a7e7]"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">🧠</span>
-                <a class="text-black hover:text-accent-orange" href="http://github.com/danishsyed-dev/RAG-API/"
-                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-[#c4a7e7]/30 mb-3 self-start font-mono">🤖 AI / LLM</span>
-              <h3 class="font-headline text-3xl font-black">RAG API</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Ask questions about your documents and get smart,
-                AI-generated answers instantly.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">
-                FastAPI-based RAG API using ollama's TinyLlama and Chromadb for generating responses to user queries.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">FastAPI</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">ChromaDB</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">TinyLlama</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ML Sales Prediction -->
-          <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:5">
-            <div class="accent-strip bg-accent-orange"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">🛒</span>
-                <a class="text-black hover:text-accent-orange"
-                  href="http://github.com/danishsyed-dev/ml-sales-prediction/" target="_blank"><i
-                    class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-orange/30 mb-3 self-start font-mono">📊 Forecasting</span>
-              <h3 class="font-headline text-3xl font-black">ML Sales Pricing</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Automatically sets the best price for products by
-                learning from past sales patterns.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">
-                Dynamic pricing system using Feedforward NN, Light GBM regressor & Elastic Net.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Flask</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">NumPy</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Meme Matcher -->
-          <div style="display: none;"
-            class="hidden-project project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:6">
-            <div class="accent-strip bg-accent-yellow"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">😂</span>
-                <a class="text-black hover:text-accent-orange" href="http://github.com/danishsyed-dev/Meme-Matcher/"
-                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-yellow/30 mb-3 self-start font-mono">👁️ Computer Vision</span>
-              <h3 class="font-headline text-3xl font-black">Meme Matcher</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Make a face at your camera and it finds the perfect
-                meme to match your expression!</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">
-                Real-time CV app matching facial expressions and hand gestures to memes using MediaPipe's AI.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">OpenCV</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">MediaPipe</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Fine-Tune SLM -->
-          <div style="display: none;"
-            class="hidden-project project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:7">
-            <div class="accent-strip bg-[#c4a7e7]"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">🍕</span>
-                <div class="flex gap-2">
-                  <a class="text-black hover:text-accent-orange"
-                    href="http://github.com/danishsyed-dev/NVIDIA-DGX-Spark-hugging_face_llm_full_fine_tune_tutorial-VIDEO/"
+            <!-- 1. RelayContext -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-yellow"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">🔗</span>
+                  <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/RelayContext"
                     target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
-                  <a class="text-black hover:text-accent-orange"
-                    href="https://huggingface.co/spaces/danishali11903/FoodExtract-v1" target="_blank"><span
-                      class="material-symbols-outlined text-3xl">open_in_new</span></a>
+                </div>
+                <span class="category-badge bg-accent-yellow/30 mb-3 self-start font-mono">🔧 Developer Tool</span>
+                <h3 class="font-headline text-3xl font-black">RelayContext</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Remembers what you were working on — so AI coding
+                  assistants don't forget between sessions.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">
+                  Node.js CLI tool that captures structured AI coding context alongside Git branches for seamless
+                  cross-session continuation.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Node.js</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">NPM Module</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">CLI</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Git</span>
                 </div>
               </div>
-              <span class="category-badge bg-[#c4a7e7]/30 mb-3 self-start font-mono">🤖 AI / LLM</span>
-              <h3 class="font-headline text-2xl font-black">Fine-Tune SLM (Gemma 3)</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Taught an AI model to read menus and texts, then pick
-                out every food & drink item mentioned.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">
-                Supervised Fine-Tuning of a Small Language Model to extract food and drink items from text safely.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Transformers</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">gradio</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">trl</span>
+            </div>
+
+            <!-- 2. InComeIQ -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-green"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">💰</span>
+                  <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/InComeIQ"
+                    target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-accent-green/30 mb-3 self-start font-mono">🤖 Machine Learning</span>
+                <h3 class="font-headline text-3xl font-black">InComeIQ</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Predicts whether someone likely earns above or below
+                  a threshold — based on demographic data.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">
+                  Production-ready ML pipeline and web app for demographic income classification with REST APIs and
+                  feature explainability.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Scikit-Learn</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">XGBoost</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Flask</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Docker</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Cancer Prediction -->
-          <div style="display: none;"
-            class="hidden-project project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:8">
-            <div class="accent-strip bg-accent-green"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">🏥</span>
-                <a class="text-black hover:text-accent-orange"
-                  href="https://ijitce.org/index.php/ijitce/article/view/1161" target="_blank"><span
-                    class="material-symbols-outlined text-3xl">article</span></a>
-              </div>
-              <span class="category-badge bg-accent-green/30 mb-3 self-start font-mono">🏥 Healthcare AI</span>
-              <h3 class="font-headline text-3xl font-black">Evaluating Cancer Prediction Machine Learning Models</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Uses patient health records to help predict lung
-                cancer outcomes — published in a research journal.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">
-                Built and evaluated ML models using patient records. Published in academic journal.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">RFC</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">KNN</span>
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">SVM</span>
+            <!-- 3. Housing Price Prediction -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-orange"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">🏠</span>
+                  <a class="text-black hover:text-accent-orange"
+                    href="http://github.com/danishsyed-dev/Housing-Price-Prediction-System/" target="_blank"><i
+                      class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-accent-orange/30 mb-3 self-start font-mono">🤖 Machine Learning</span>
+                <h3 class="font-headline text-3xl font-black">Housing Price Predictor</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Estimates how much a house is worth using historical
+                  sales data and smart algorithms.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">
+                  End-to-End ML pipeline for price prediction, built using ZenML and MLflow.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">ZenML</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">MLflow</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Premier League 2025 ML -->
-          <div style="display: none;"
-            class="hidden-project project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:9">
-            <div class="accent-strip bg-accent-orange"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">⚽🏟</span>
-                <a class="text-black hover:text-accent-orange"
-                  href="https://github.com/danishsyed-dev/PL25_Prediction_ML" target="_blank"><i
-                    class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-orange/30 mb-3 self-start font-mono">📊 Sports Analytics</span>
-              <h3 class="font-headline text-3xl font-black">PL 2025 Match Predictor</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Predicts who wins Premier League football matches
-                using past game data.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">Predicts outcomes of Premier League matches using
-                historical data.</p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Scikit-Learn</span>
+            <!-- 4. Silver Price Prediction -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-green"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">🥈</span>
+                  <div class="flex gap-2">
+                    <a class="text-black hover:text-accent-orange"
+                      href="http://github.com/danishsyed-dev/Silver-Price-Prediction/" target="_blank"><i
+                        class="fa-brands fa-github text-3xl"></i></a>
+                    <a class="text-black hover:text-accent-orange"
+                      href="https://danishali11903-silver-price-prediction.hf.space/" target="_blank"><span
+                        class="material-symbols-outlined text-3xl">open_in_new</span></a>
+                  </div>
+                </div>
+                <span class="category-badge bg-accent-green/30 mb-3 self-start font-mono">📊 Forecasting</span>
+                <h3 class="font-headline text-3xl font-black">Silver Price Predictor</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Forecasts future silver prices in the Indian market —
+                  so investors can plan ahead.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">
+                  End-to-end machine learning project to predict silver prices for the Indian market.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">scikit-learn</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Flask</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Streaming Trend Analysis -->
-          <div style="display: none;"
-            class="hidden-project project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:10">
-            <div class="accent-strip bg-[#c4a7e7]"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">📈</span>
-                <a class="text-black hover:text-accent-orange"
-                  href="https://github.com/danishsyed-dev/Identifying_Hot_Topic_Trends" target="_blank"><i
-                    class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-[#c4a7e7]/30 mb-3 self-start font-mono">💬 NLP</span>
-              <h3 class="font-headline text-3xl font-black">Identifying Hot Topic Trends</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Watches live text streams and spots what topics are
-                suddenly going viral.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">NLP model to detect/visualize trending topics
-                from real-time text streams.</p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">NLP</span>
+            <!-- 5. Fine-Tune SLM -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-[#c4a7e7]"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">🍕</span>
+                  <div class="flex gap-2">
+                    <a class="text-black hover:text-accent-orange"
+                      href="http://github.com/danishsyed-dev/NVIDIA-DGX-Spark-hugging_face_llm_full_fine_tune_tutorial-VIDEO/"
+                      target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+                    <a class="text-black hover:text-accent-orange"
+                      href="https://huggingface.co/spaces/danishali11903/FoodExtract-v1" target="_blank"><span
+                        class="material-symbols-outlined text-3xl">open_in_new</span></a>
+                  </div>
+                </div>
+                <span class="category-badge bg-[#c4a7e7]/30 mb-3 self-start font-mono">🤖 AI / LLM</span>
+                <h3 class="font-headline text-2xl font-black">Fine-Tune SLM (Gemma 3)</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Taught an AI model to read menus and texts, then pick
+                  out every food & drink item mentioned.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">
+                  Supervised Fine-Tuning of a Small Language Model to extract food and drink items from text safely.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Transformers</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">gradio</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">trl</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- La Liga Forwards Analysis -->
-          <div style="display: none;"
-            class="hidden-project project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:11">
-            <div class="accent-strip bg-accent-yellow"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">⚽🏆</span>
-                <a class="text-black hover:text-accent-orange"
-                  href="https://github.com/danishsyed-dev/la-liga-forwards-analysis" target="_blank"><i
-                    class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-yellow/30 mb-3 self-start font-mono">📊 Sports Analytics</span>
-              <h3 class="font-headline text-3xl font-black">La Liga Analysis</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Compares top Spanish football forwards with visual
-                charts and radar diagrams.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">Statistical analysis with bar charts and radar
-                diagrams.</p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Data
-                  Viz</span>
+            <!-- 6. RAG API -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-[#c4a7e7]"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">🧠</span>
+                  <a class="text-black hover:text-accent-orange" href="http://github.com/danishsyed-dev/RAG-API/"
+                    target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-[#c4a7e7]/30 mb-3 self-start font-mono">🤖 AI / LLM</span>
+                <h3 class="font-headline text-3xl font-black">RAG API</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Ask questions about your documents and get smart,
+                  AI-generated answers instantly.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">
+                  FastAPI-based RAG API using ollama's TinyLlama and Chromadb for generating responses to user queries.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">FastAPI</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">ChromaDB</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">TinyLlama</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Life RPG Tracker -->
-          <div style="display: none;"
-            class="hidden-project project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:12">
-            <div class="accent-strip bg-accent-yellow"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">🎮</span>
-                <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/Life-RPG"
-                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-yellow/30 mb-3 self-start font-mono">🎮 Fun / Gamification</span>
-              <h3 class="font-headline text-3xl font-black">Life RPG Tracker</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Turns your daily habits into a video game — earn XP,
-                complete quests, and build streaks!</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">Gamifies daily habits with quests, XP, streaks.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">JS</span>
+            <!-- 7. ML Sales Prediction -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-orange"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">🛒</span>
+                  <a class="text-black hover:text-accent-orange"
+                    href="http://github.com/danishsyed-dev/ml-sales-prediction/" target="_blank"><i
+                      class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-accent-orange/30 mb-3 self-start font-mono">📊 Forecasting</span>
+                <h3 class="font-headline text-3xl font-black">ML Sales Pricing</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Automatically sets the best price for products by
+                  learning from past sales patterns.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">
+                  Dynamic pricing system using Feedforward NN, Light GBM regressor & Elastic Net.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Flask</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">NumPy</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Weather Forecast App -->
-          <div style="display: none;"
-            class="hidden-project project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:13">
-            <div class="accent-strip bg-accent-green"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">🌦️</span>
-                <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/Weather-scraper"
-                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-green/30 mb-3 self-start font-mono">🌐 Web App</span>
-              <h3 class="font-headline text-3xl font-black">Weather Forecast</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Check the weather forecast for any city — clean,
-                fast, and works on every device.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">Responsive forecasting app using OpenWeather API
-                with PHP.</p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">PHP</span>
+            <!-- 8. Meme Matcher -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-yellow"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">😂</span>
+                  <a class="text-black hover:text-accent-orange" href="http://github.com/danishsyed-dev/Meme-Matcher/"
+                    target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-accent-yellow/30 mb-3 self-start font-mono">👁️ Computer Vision</span>
+                <h3 class="font-headline text-3xl font-black">Meme Matcher</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Make a face at your camera and it finds the perfect
+                  meme to match your expression!</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">
+                  Real-time CV app matching facial expressions and hand gestures to memes using MediaPipe's AI.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">OpenCV</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">MediaPipe</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Smart Highway Light -->
-          <div style="display: none;"
-            class="hidden-project project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col"
-            style="--delay:14">
-            <div class="accent-strip bg-accent-orange"></div>
-            <div class="p-8 flex-grow flex flex-col">
-              <div class="flex justify-between items-start mb-2">
-                <span class="card-icon">💡</span>
-                <a class="text-black hover:text-accent-orange"
-                  href="https://github.com/danishsyed-dev/SMART-HIGHWAY-LIGHTS-WITH-AUTO-CONTROL-SYSTEM"
-                  target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
-              </div>
-              <span class="category-badge bg-accent-orange/30 mb-3 self-start font-mono">⚡ IoT / Hardware</span>
-              <h3 class="font-headline text-3xl font-black">Smart Highway Light</h3>
-              <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
-                style="text-transform:none;letter-spacing:normal;">Street lights that auto-adjust brightness when cars
-                pass — saving energy on highways.</p>
-              <p class="text-sm font-bold mb-6 leading-relaxed italic">IoT Arduino system controlling street lights via
-                IR and LDR sensors.</p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Arduino
-                  / IoT</span>
+            <!-- 9. Cancer Prediction -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-green"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">🏥</span>
+                  <a class="text-black hover:text-accent-orange"
+                    href="https://ijitce.org/index.php/ijitce/article/view/1161" target="_blank"><span
+                      class="material-symbols-outlined text-3xl">article</span></a>
+                </div>
+                <span class="category-badge bg-accent-green/30 mb-3 self-start font-mono">🏥 Healthcare AI</span>
+                <h3 class="font-headline text-3xl font-black">Evaluating Cancer Prediction Machine Learning Models</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Uses patient health records to help predict lung
+                  cancer outcomes — published in a research journal.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">
+                  Built and evaluated ML models using patient records. Published in academic journal.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Python</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">RFC</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">KNN</span>
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">SVM</span>
+                </div>
               </div>
             </div>
-          </div>
 
+            <!-- 10. Premier League 2025 ML -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-orange"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">⚽🏟</span>
+                  <a class="text-black hover:text-accent-orange"
+                    href="https://github.com/danishsyed-dev/PL25_Prediction_ML" target="_blank"><i
+                      class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-accent-orange/30 mb-3 self-start font-mono">📊 Sports Analytics</span>
+                <h3 class="font-headline text-3xl font-black">PL 2025 Match Predictor</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Predicts who wins Premier League football matches
+                  using past game data.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">Predicts outcomes of Premier League matches using
+                  historical data.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Scikit-Learn</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 11. Streaming Trend Analysis -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-[#c4a7e7]"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">📈</span>
+                  <a class="text-black hover:text-accent-orange"
+                    href="https://github.com/danishsyed-dev/Identifying_Hot_Topic_Trends" target="_blank"><i
+                      class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-[#c4a7e7]/30 mb-3 self-start font-mono">💬 NLP</span>
+                <h3 class="font-headline text-3xl font-black">Identifying Hot Topic Trends</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Watches live text streams and spots what topics are
+                  suddenly going viral.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">NLP model to detect/visualize trending topics
+                  from real-time text streams.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">NLP</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 12. La Liga Forwards Analysis -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-yellow"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">⚽🏆</span>
+                  <a class="text-black hover:text-accent-orange"
+                    href="https://github.com/danishsyed-dev/la-liga-forwards-analysis" target="_blank"><i
+                      class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-accent-yellow/30 mb-3 self-start font-mono">📊 Sports Analytics</span>
+                <h3 class="font-headline text-3xl font-black">La Liga Analysis</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Compares top Spanish football forwards with visual
+                  charts and radar diagrams.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">Statistical analysis with bar charts and radar
+                  diagrams.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Data Viz</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 13. Life RPG Tracker -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-yellow"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">🎮</span>
+                  <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/Life-RPG"
+                    target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-accent-yellow/30 mb-3 self-start font-mono">🎮 Fun / Gamification</span>
+                <h3 class="font-headline text-3xl font-black">Life RPG Tracker</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Turns your daily habits into a video game — earn XP,
+                  complete quests, and build streaks!</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">Gamifies daily habits with quests, XP, streaks.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">JS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 14. Weather Forecast App -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-green"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">🌦️</span>
+                  <a class="text-black hover:text-accent-orange" href="https://github.com/danishsyed-dev/Weather-scraper"
+                    target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-accent-green/30 mb-3 self-start font-mono">🌐 Web App</span>
+                <h3 class="font-headline text-3xl font-black">Weather Forecast</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Check the weather forecast for any city — clean,
+                  fast, and works on every device.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">Responsive forecasting app using OpenWeather API
+                  with PHP.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">PHP</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 15. Smart Highway Light -->
+            <div class="project-card group border-4 border-black bg-white shadow-hard-lg overflow-hidden flex flex-col">
+              <div class="accent-strip bg-accent-orange"></div>
+              <div class="p-8 flex-grow flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="card-icon">💡</span>
+                  <a class="text-black hover:text-accent-orange"
+                    href="https://github.com/danishsyed-dev/SMART-HIGHWAY-LIGHTS-WITH-AUTO-CONTROL-SYSTEM"
+                    target="_blank"><i class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <span class="category-badge bg-accent-orange/30 mb-3 self-start font-mono">⚡ IoT / Hardware</span>
+                <h3 class="font-headline text-3xl font-black">Smart Highway Light</h3>
+                <p class="plain-english text-base font-semibold text-black/60 mt-1 mb-4"
+                  style="text-transform:none;letter-spacing:normal;">Street lights that auto-adjust brightness when cars
+                  pass — saving energy on highways.</p>
+                <p class="text-sm font-bold mb-6 leading-relaxed italic">IoT Arduino system controlling street lights via
+                  IR and LDR sensors.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-2 py-1 border-2 border-black bg-parchment-dark text-[10px] font-mono font-bold uppercase">Arduino / IoT</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <div class="mt-16 text-center" id="viewAllProjectsContainer">
-          <button id="toggleProjectsBtn"
-            class="inline-block bg-black text-white px-8 py-4 border-2 border-black font-headline font-black text-sm uppercase shadow-[6px_6px_0px_0px_rgba(230,126,34,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer">
-            VIEW ALL PROJECTS
+        <!-- Carousel Controls -->
+        <div class="carousel-controls">
+          <button class="carousel-arrow btn-press" id="prevProject" aria-label="Previous projects">
+            <span class="material-symbols-outlined">arrow_back</span>
           </button>
+          <div class="flex items-center gap-4">
+            <span class="carousel-counter"><span id="carouselPageCurrent">1</span> / <span id="carouselPageTotal">8</span></span>
+            <div class="carousel-dots" id="carouselDots"></div>
+          </div>
+          <button class="carousel-arrow btn-press" id="nextProject" aria-label="Next projects">
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
 
       </section>
 
@@ -864,7 +811,7 @@
           </div>
           <div class="mt-8 text-center">
             <a href="https://syeddanishali.me/my-blog/" target="_blank"
-              class="inline-block bg-black text-white px-8 py-4 border-2 border-black font-headline font-black text-sm uppercase shadow-[6px_6px_0px_0px_rgba(230,126,34,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+              class="inline-block bg-black text-white px-8 py-4 border-2 border-black font-headline font-black text-sm uppercase shadow-[6px_6px_0px_0px_rgba(230,126,34,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-transform btn-press">
               VIEW ALL POSTS
             </a>
           </div>
@@ -882,11 +829,11 @@
               opportunities and interesting collaborations in AI and Full-Stack Engineering.</p>
             <div class="flex flex-col sm:flex-row gap-4">
               <button id="openResumeModalBot"
-                class="bg-black text-white px-8 py-4 border-2 border-black font-headline font-black text-sm uppercase shadow-[6px_6px_0px_0px_rgba(230,126,34,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all flex items-center justify-center gap-2">
+                class="bg-black text-white px-8 py-4 border-2 border-black font-headline font-black text-sm uppercase shadow-[6px_6px_0px_0px_rgba(230,126,34,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-transform btn-press flex items-center justify-center gap-2">
                 <span class="material-symbols-outlined">description</span> VIEW_RESUME
               </button>
               <a href="mailto:knightdanish@outlook.com"
-                class="bg-white text-black px-8 py-4 border-4 border-black font-headline font-black text-sm uppercase shadow-hard hover:bg-parchment-dark transition-all flex items-center justify-center gap-2">
+                class="bg-white text-black px-8 py-4 border-4 border-black font-headline font-black text-sm uppercase shadow-hard hover:bg-parchment-dark transition-colors btn-press flex items-center justify-center gap-2">
                 <span class="material-symbols-outlined">mail</span> SEND_ENQUIRY
               </a>
             </div>
@@ -946,7 +893,7 @@
 
   <!-- Resume Modal Container (Used by js/main.js) -->
   <div class="modal-overlay" id="resumeModal">
-    <div class="p-4"
+    <div class="p-4 modal-content"
       style="width: 90%; max-width: 800px; background: white; border: 4px solid black; box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);">
       <div class="flex justify-between items-center mb-4 pb-2 border-b-4 border-black">
         <div class="flex items-center gap-2 font-headline font-black uppercase">

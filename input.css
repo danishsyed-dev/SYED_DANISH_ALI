@@ -2,7 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Phase 1: Motion Design Tokens ── */
 @layer base {
+  :root {
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-hover: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+  }
+
   body {
     background-color: #f8f7ee !important;
     color: #000000 !important;
@@ -42,8 +52,8 @@
     letter-spacing: -0.02em;
   }
 
+  /* ── Phase 4: Modal with enter/exit animation ── */
   .modal-overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -53,31 +63,66 @@
     z-index: 9999;
     justify-content: center;
     align-items: center;
+    display: flex;
+    /* hidden by default via opacity + pointer-events */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration-normal) var(--ease-out);
   }
 
   .modal-overlay.active {
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
   }
 
-  /* ── Project Card Enhancements ── */
+  .modal-overlay .modal-content {
+    transform: scale(0.96);
+    opacity: 0;
+    transition:
+      transform var(--duration-normal) var(--ease-out),
+      opacity var(--duration-normal) var(--ease-out);
+  }
+
+  .modal-overlay.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* Exit is faster than enter (asymmetric — Emil principle) */
+  .modal-overlay:not(.active) {
+    transition: opacity var(--duration-fast) ease-in;
+  }
+
+  .modal-overlay:not(.active) .modal-content {
+    transition:
+      transform var(--duration-fast) ease-in,
+      opacity var(--duration-fast) ease-in;
+  }
+
+  /* ── Project Card base ── */
   .project-card {
     position: relative;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    flex-shrink: 0;
   }
 
-  .project-card:hover {
-    transform: translateY(-6px) rotate(-0.5deg);
-    box-shadow: 12px 12px 0px 0px rgba(0,0,0,1);
+  /* Hover: clean lift only on pointer devices */
+  @media (hover: hover) and (pointer: fine) {
+    .project-card:hover {
+      transform: translateY(-4px);
+      transition: transform var(--duration-normal) var(--ease-out);
+    }
   }
 
   .project-card .card-icon {
     font-size: 3rem;
     line-height: 1;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: transform var(--duration-fast) var(--ease-out);
   }
 
-  .project-card:hover .card-icon {
-    transform: scale(1.2) rotate(8deg);
+  @media (hover: hover) and (pointer: fine) {
+    .project-card:hover .card-icon {
+      transform: scale(1.08);
+    }
   }
 
   .project-card .accent-strip {
@@ -107,19 +152,152 @@
     gap: 4px;
   }
 
-  /* Scroll reveal animation */
-  .project-card {
+  /* ── Project Carousel ── */
+  .carousel-viewport {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 3rem;
+    transition: transform var(--duration-slow) var(--ease-out);
+    will-change: transform;
+  }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .carousel-arrow {
+    width: 56px;
+    height: 56px;
+    border: 3px solid black;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform var(--duration-fast) var(--ease-out);
+    font-size: 1.5rem;
+  }
+
+  .carousel-arrow:hover {
+    transform: scale(1.05);
+  }
+
+  .carousel-arrow:active {
+    transform: scale(0.95);
+  }
+
+  .carousel-arrow:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+
+  .carousel-arrow:disabled:hover {
+    transform: none;
+  }
+
+  .carousel-counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    min-width: 5ch;
+    text-align: center;
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid black;
+    background: transparent;
+    cursor: pointer;
+    transition: background var(--duration-fast) var(--ease-out);
+    padding: 0;
+  }
+
+  .carousel-dot.active {
+    background: black;
+  }
+
+  .carousel-dot:hover:not(.active) {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  /* ── Button press feedback ── */
+  .btn-press {
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .btn-press:active {
+    transform: scale(0.97);
+  }
+
+  /* ── Education card hover — shadow via pseudo for GPU perf ── */
+  .edu-card {
+    position: relative;
+  }
+
+  .edu-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
     opacity: 0;
-    transform: translateY(40px);
+    transition: opacity var(--duration-normal) var(--ease-out);
+    pointer-events: none;
+    z-index: -1;
   }
 
-  .project-card.revealed {
+  .edu-card:hover::after {
     opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  .project-card.revealed:hover {
-    transform: translateY(-6px) rotate(-0.5deg);
+  .edu-card {
+    transition: transform var(--duration-normal) var(--ease-out);
+  }
+
+  .edu-card:hover {
+    transform: translate(-2px, -2px);
+  }
+
+  /* ── Accessibility ── */
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track,
+    .project-card,
+    .project-card .card-icon,
+    .modal-overlay,
+    .modal-overlay .modal-content,
+    .edu-card,
+    .edu-card::after,
+    .btn-press {
+      transition-duration: 0ms !important;
+      animation: none !important;
+    }
+  }
+
+  /* Touch device hover guard */
+  @media (hover: none) {
+    .edu-card:hover {
+      transform: none;
+    }
+
+    .edu-card:hover::after {
+      opacity: 0;
+    }
   }
 }

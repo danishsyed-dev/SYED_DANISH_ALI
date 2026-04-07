@@ -10,18 +10,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initResumeModal();
-    initProjectsToggle();
     initMobileMenu();
-    initProjectReveal();
+    initProjectCarousel();
 });
 
 /* ============================================
    SMOOTH SCROLL NAVIGATION
    ============================================ */
 
-/**
- * Initialize smooth scroll for anchor links
- */
 function initSmoothScroll() {
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -41,38 +37,23 @@ function initSmoothScroll() {
    RESUME MODAL
    ============================================ */
 
-/**
- * Initialize resume modal functionality
- */
 function initResumeModal() {
     const resumeModal = document.getElementById('resumeModal');
     const openModalBtn = document.getElementById('openResumeModal');
     const closeModalBtn = document.getElementById('closeResumeModal');
 
-    // Guard clause if elements don't exist
     if (!resumeModal || !openModalBtn || !closeModalBtn) {
         console.warn('Resume modal elements not found');
         return;
     }
 
-    // Open modal
-    openModalBtn.addEventListener('click', () => {
-        openModal(resumeModal);
-    });
+    openModalBtn.addEventListener('click', () => openModal(resumeModal));
+    closeModalBtn.addEventListener('click', () => closeModal(resumeModal));
 
-    // Close modal via button
-    closeModalBtn.addEventListener('click', () => {
-        closeModal(resumeModal);
-    });
-
-    // Close modal when clicking outside
     resumeModal.addEventListener('click', (e) => {
-        if (e.target === resumeModal) {
-            closeModal(resumeModal);
-        }
+        if (e.target === resumeModal) closeModal(resumeModal);
     });
 
-    // Close modal with Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
             closeModal(resumeModal);
@@ -80,19 +61,11 @@ function initResumeModal() {
     });
 }
 
-/**
- * Open the modal
- * @param {HTMLElement} modal - The modal element to open
- */
 function openModal(modal) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
-/**
- * Close the modal
- * @param {HTMLElement} modal - The modal element to close
- */
 function closeModal(modal) {
     modal.classList.remove('active');
     document.body.style.overflow = '';
@@ -102,38 +75,149 @@ function closeModal(modal) {
    PAGE LOAD
    ============================================ */
 
-/**
- * Scroll to top on page load
- */
 window.onload = () => {
     window.scrollTo(0, 0);
 };
 
 /* ============================================
-   PROJECTS TOGGLE
+   PROJECT CAROUSEL
+   Shows 2 cards/page (desktop), 1 card (mobile)
+   Supports arrows, dots, keyboard, touch swipe
    ============================================ */
 
-/**
- * Initialize projects expand functionality
- */
-function initProjectsToggle() {
-    const toggleBtn = document.getElementById('toggleProjectsBtn');
-    const hiddenProjects = document.querySelectorAll('.hidden-project');
-    const btnContainer = document.getElementById('viewAllProjectsContainer');
+function initProjectCarousel() {
+    const viewport = document.getElementById('carouselViewport');
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevProject');
+    const nextBtn = document.getElementById('nextProject');
+    const pageCurrentEl = document.getElementById('carouselPageCurrent');
+    const pageTotalEl = document.getElementById('carouselPageTotal');
+    const dotsContainer = document.getElementById('carouselDots');
 
-    if (!toggleBtn || !hiddenProjects.length) return;
+    if (!viewport || !track) return;
 
-    toggleBtn.addEventListener('click', () => {
-        // Unhide all past initial 6 projects
-        hiddenProjects.forEach(proj => {
-            proj.style.display = 'flex';
+    const cards = Array.from(track.querySelectorAll('.project-card'));
+    const GAP = 48; // 3rem = 48px (matches CSS gap: 3rem)
+    let currentPage = 0;
+
+    function getPerPage() {
+        return window.innerWidth >= 768 ? 2 : 1;
+    }
+
+    function getTotalPages() {
+        return Math.ceil(cards.length / getPerPage());
+    }
+
+    function getCardWidth() {
+        const perPage = getPerPage();
+        return (viewport.offsetWidth - GAP * (perPage - 1)) / perPage;
+    }
+
+    function buildDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        const total = getTotalPages();
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === currentPage ? ' active' : '');
+            dot.setAttribute('aria-label', 'Go to page ' + (i + 1));
+            dot.addEventListener('click', () => {
+                currentPage = i;
+                render();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function render() {
+        const cardWidth = getCardWidth();
+        const perPage = getPerPage();
+        const totalPages = getTotalPages();
+
+        // Clamp page
+        currentPage = Math.max(0, Math.min(currentPage, totalPages - 1));
+
+        // Size all cards to fit viewport
+        cards.forEach(card => {
+            card.style.width = cardWidth + 'px';
+            card.style.minWidth = cardWidth + 'px';
         });
 
-        // Hide the view all button now that everything is visible
-        if (btnContainer) {
-            btnContainer.style.display = 'none';
+        // Slide track via transform (GPU-accelerated)
+        const firstCardIndex = currentPage * perPage;
+        const offset = firstCardIndex * (cardWidth + GAP);
+        track.style.transform = 'translateX(-' + offset + 'px)';
+
+        // Update counter
+        if (pageCurrentEl) pageCurrentEl.textContent = currentPage + 1;
+        if (pageTotalEl) pageTotalEl.textContent = totalPages;
+
+        // Update arrow states
+        if (prevBtn) prevBtn.disabled = currentPage === 0;
+        if (nextBtn) nextBtn.disabled = currentPage === totalPages - 1;
+
+        // Update dots
+        if (dotsContainer) {
+            const dots = dotsContainer.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentPage);
+            });
+        }
+    }
+
+    // Arrow handlers
+    if (prevBtn) prevBtn.addEventListener('click', () => { currentPage--; render(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { currentPage++; render(); });
+
+    // Keyboard navigation (only when projects section is in viewport)
+    document.addEventListener('keydown', (e) => {
+        const section = document.getElementById('projects');
+        if (!section) return;
+        const rect = section.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (!inView) return;
+
+        if (e.key === 'ArrowLeft') {
+            currentPage = Math.max(0, currentPage - 1);
+            render();
+        }
+        if (e.key === 'ArrowRight') {
+            currentPage = Math.min(getTotalPages() - 1, currentPage + 1);
+            render();
         }
     });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    viewport.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                currentPage = Math.min(getTotalPages() - 1, currentPage + 1);
+            } else {
+                currentPage = Math.max(0, currentPage - 1);
+            }
+            render();
+        }
+    }, { passive: true });
+
+    // Resize handler (debounced)
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            buildDots();
+            render();
+        }, 150);
+    });
+
+    // Initial render
+    buildDots();
+    render();
 }
 
 /* ============================================
@@ -152,11 +236,7 @@ function initMobileMenu() {
 
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        if (mobileMenu.classList.contains('hidden')) {
-            menuIcon.textContent = 'menu';
-        } else {
-            menuIcon.textContent = 'close';
-        }
+        menuIcon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
     });
 
     mobileLinks.forEach(link => {
@@ -171,54 +251,6 @@ function initMobileMenu() {
             openModal(resumeModal);
             mobileMenu.classList.add('hidden');
             menuIcon.textContent = 'menu';
-        });
-    }
-}
-
-/* ============================================
-   PROJECT SCROLL REVEAL
-   ============================================ */
-
-/**
- * Staggered scroll-reveal animation for project cards
- */
-function initProjectReveal() {
-    const cards = document.querySelectorAll('.project-card');
-    if (!cards.length) return;
-
-    let revealIndex = 0;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const card = entry.target;
-                const delay = revealIndex * 120; // stagger each card by 120ms
-                setTimeout(() => {
-                    card.classList.add('revealed');
-                }, delay);
-                revealIndex++;
-                observer.unobserve(card);
-            }
-        });
-    }, { threshold: 0.15 });
-
-    cards.forEach(card => {
-        // Only observe visible cards (not hidden-project ones initially)
-        if (card.style.display !== 'none') {
-            observer.observe(card);
-        }
-    });
-
-    // Re-observe hidden cards when "View All" is clicked
-    const toggleBtn = document.getElementById('toggleProjectsBtn');
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
-            revealIndex = 0;
-            setTimeout(() => {
-                document.querySelectorAll('.project-card:not(.revealed)').forEach(card => {
-                    observer.observe(card);
-                });
-            }, 100);
         });
     }
 }
