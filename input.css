@@ -238,6 +238,47 @@
     background: rgba(0, 0, 0, 0.3);
   }
 
+  @media (max-width: 767px) {
+    .carousel-track {
+      gap: 1.25rem;
+    }
+
+    .carousel-controls {
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .carousel-arrow {
+      width: 48px;
+      height: 48px;
+      font-size: 1.25rem;
+    }
+
+    .carousel-counter {
+      font-size: 0.875rem;
+      letter-spacing: 0.08em;
+    }
+
+    .carousel-dots {
+      display: none;
+    }
+
+    .project-card .card-icon {
+      font-size: 2.35rem;
+    }
+
+    .modal-overlay .modal-content {
+      width: 95% !important;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .carousel-track {
+      gap: 2rem;
+    }
+  }
+
   /* ── Button press feedback ── */
   .btn-press {
     transition: transform var(--duration-fast) var(--ease-out);

@@ -97,11 +97,18 @@ function initProjectCarousel() {
     if (!viewport || !track) return;
 
     const cards = Array.from(track.querySelectorAll('.project-card'));
-    const GAP = 48; // 3rem = 48px (matches CSS gap: 3rem)
     let currentPage = 0;
 
     function getPerPage() {
-        return window.innerWidth >= 768 ? 2 : 1;
+        if (window.innerWidth >= 1280) return 3;
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+    }
+
+    function getGap() {
+        const computed = window.getComputedStyle(track);
+        const gap = parseFloat(computed.columnGap || computed.gap || '48');
+        return Number.isFinite(gap) ? gap : 48;
     }
 
     function getTotalPages() {
@@ -110,7 +117,8 @@ function initProjectCarousel() {
 
     function getCardWidth() {
         const perPage = getPerPage();
-        return (viewport.offsetWidth - GAP * (perPage - 1)) / perPage;
+        const gap = getGap();
+        return (viewport.offsetWidth - gap * (perPage - 1)) / perPage;
     }
 
     function buildDots() {
@@ -132,6 +140,7 @@ function initProjectCarousel() {
     function render() {
         const cardWidth = getCardWidth();
         const perPage = getPerPage();
+        const gap = getGap();
         const totalPages = getTotalPages();
 
         // Clamp page
@@ -145,7 +154,7 @@ function initProjectCarousel() {
 
         // Slide track via transform (GPU-accelerated)
         const firstCardIndex = currentPage * perPage;
-        const offset = firstCardIndex * (cardWidth + GAP);
+        const offset = firstCardIndex * (cardWidth + gap);
         track.style.transform = 'translateX(-' + offset + 'px)';
 
         // Update counter
